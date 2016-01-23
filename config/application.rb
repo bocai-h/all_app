@@ -21,5 +21,10 @@ module AllApp
     # config.i18n.default_locale = :de
     # 导出的模式文件是ruby格式的
     config.active_record.schema_format
+    # 设置Rails，让其在生产环境中服务于静态资源
+    config.serve_static_assets = true
+    #设置自己的静态资源路径
+    # config.assets.paths << File.join(Rails.root, 'app', 'assets', 'images','logo')
+    config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
   end
 end
