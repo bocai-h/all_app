@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root 'common#index'
 
   match 'welcome',to: 'common#index', via: :get
+  match 'index', to: 'common#my_door', via: :get
   match 'users/index',to: 'users#index', via: :get
 
   # The priority is based upon order of creation: first created -> highest priority.
