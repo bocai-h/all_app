@@ -26,5 +26,27 @@ module AllApp
     #设置自己的静态资源路径
     # config.assets.paths << File.join(Rails.root, 'app', 'assets', 'images','logo')
     config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
+    config.assets.compress = true
+    #在config/application.rb 文件中加入以下代码可以禁止生成控制器相关的静态资源：
+    config.generators do |g|
+      g.assets false
+    end
+
+    # config/application.rb
+    # config.assets.precompile << Proc.new do |path|
+    #   if path =~ /\.(css|js)\z/
+    #     full_path = Rails.application.assets.resolve(path).to_path
+    #     app_assets_path = Rails.root.join('app', 'assets').to_path
+    #     if full_path.starts_with? app_assets_path
+    #       puts "including asset: " + full_path
+    #       true
+    #     else
+    #       puts "excluding asset: " + full_path
+    #       false
+    #     end
+    #   else
+    #     false
+    #   end
+    # end
   end
 end
