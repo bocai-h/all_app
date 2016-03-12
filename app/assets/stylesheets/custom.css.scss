@@ -1,0 +1,36 @@
+html {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #333;
+  background-color: #fff;
+}
+body {
+  position: relative;
+  font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif!important;
+  font-size: 12px;
+  background-color: #f1f2f6;
+  overflow-x: hidden;
+  text-align: center;
+}
+.navbar-custom{
+  border: none;
+  border-radius: 0;
+  background-color: #303641;
+  width: 100%;
+  margin-bottom: 10px;
+}
+.navbar-header a{
+  font-size: 20px;
+}
+.navbar-custom .nav li a {
+  display: block;
+  color: #aaabae;
+  font-size: 20px;
+}
+.dropdown-header{
+  font-size: 20px;
+}
+.footer-copyright {
+  font-size: 20px;
+}
