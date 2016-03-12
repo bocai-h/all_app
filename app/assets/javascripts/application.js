@@ -12,8 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require twitter/bootstrap
 //= require turbolinks
-//= require bootstrap-sprockets
-//= require pgwmenu
+//= require site.min
 //= require_tree .
 
