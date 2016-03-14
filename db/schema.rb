@@ -16,8 +16,15 @@ ActiveRecord::Schema.define(version: 20160123110138) do
   create_table "users", force: true do |t|
     t.string   "user_name",     limit: 100, null: false
     t.string   "email_address", limit: 50,  null: false
+    t.string   "first_name",    limit: 50,  null: false
+    t.string   "last_name",     limit: 50
+    t.string   "status_code",   limit: 30
+    t.string   "created_by",    limit: 36
+    t.string   "updated_by",    limit: 36
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "users", ["email_address"], name: "index_users_on_email_address", unique: true, using: :btree
 
 end

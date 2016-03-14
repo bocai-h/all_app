@@ -3,7 +3,4 @@ class CommonController < ApplicationController
   def index
     # render :layout => false
   end
-
-  def my_door
-  end
 end
