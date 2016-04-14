@@ -33,6 +33,8 @@ gem 'twitter-bootstrap-rails', '~> 3.2', '>= 3.2.2'
 
 gem 'uuid', '~> 2.3', '>= 2.3.8'
 
+gem 'workflow', '~> 1.2'
+
 group :development do
   gem 'pry'
 end
