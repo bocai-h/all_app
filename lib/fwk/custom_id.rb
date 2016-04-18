@@ -6,7 +6,7 @@ module Fwk
 
         private
         def setup_custom_id
-          id_column = self.class.columns.detect{|i| i.primary}
+          id_column = self.class.columns.detect{|i| i.name.eql?("id")}
           if id_column&&id_column.type.eql?(:string)&&id_column.limit> 35
             self.id = UUID.new.generate
           end
