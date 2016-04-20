@@ -1,6 +1,19 @@
 <div class="container-fluid">
   <div class="row-fluid">
     <div class="col-md-12">
+      <div class="msg">
+        <% if flash[:notice] == "导入模板错误!!" %>
+         <div class="alert alert-danger alert-dismissible" role="alert">
+           <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+           <p class="lead"><%= flash[:notice] %></p>
+         </div>
+        <% elsif flash[:notice] == "导入模板成功"  %>
+            <div class="alert alert-success alert-dismissible" role="alert">
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <p class="lead"><%= flash[:notice] %></p>
+            </div>
+        <% end %>
+      </div>
        <div class="panel panel-primary">
         <!-- Default panel contents -->
          <div class="panel-heading"><h4>数据导入</h4></div>

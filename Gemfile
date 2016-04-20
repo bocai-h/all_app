@@ -36,6 +36,7 @@ gem 'uuid', '~> 2.3', '>= 2.3.8'
 gem 'workflow', '~> 1.2'
 
 gem 'roo', '~> 2.3', '>= 2.3.2'
+gem 'roo-xls', '~> 1.0'
 
 group :development do
   gem 'pry'
