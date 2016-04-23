@@ -1,5 +1,7 @@
 class Settlement < ActiveRecord::Base
   self.table_name = "settlements"
+  # 设置默认每页显示条数
+  # self.per_page = 10
 
   def self.import_data file
     # 事务锁 必须全部完成 否则回回滚
