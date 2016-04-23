@@ -2,13 +2,12 @@ class Settlement < ActiveRecord::Base
   self.table_name = "settlements"
 
   def self.import_data file
-    binding.pry
     spreadsheet = open_spreadsheet(file)
     if spreadsheet.nil?
       return "error"
     end
     # 分割符号
-    head = spreadsheet.row(3)[0]
+    head = spreadsheet.row(spreadsheet.first_row)[0]
     # 第一列的值为下列或者为nil或者列为head 忽略
     exclude = ["合计:","代扣税金:","扣税后合计:","经理：","业务号","手续费联动级别："]
     #清单内容
@@ -26,6 +25,12 @@ class Settlement < ActiveRecord::Base
         #全数字则为详细 否则则是总清单内容
         if row[0].to_i.to_s == row[0]
           #详细
+          # 车牌号可能会没有 导致row[11]往后跳了一列
+          # 如果不是车牌号的模式 则插入一个空的填充11
+          unless row[11] =~ /^\p{Han}\w+$/u
+            row[11,0] = [" "]
+          end
+
           SettlementDetail.create(:settlement_id => self.last.id,:service_code => row[0],:insurance_name => row[1],
                                     :insurance_person => row[2],:insuranced_person => row[3],:money_type => row[4],
                                     :circle_time => row[5],:insurance_money => row[6],:actual_money => row[7],:handling_charge => row[8],
