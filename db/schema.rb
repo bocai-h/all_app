@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160420180705) do
+ActiveRecord::Schema.define(version: 20160423094904) do
 
   create_table "articles", force: :cascade do |t|
     t.string   "title",       limit: 50,  null: false
@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(version: 20160420180705) do
     t.string   "list_code",          limit: 100
     t.string   "agent_certif_code",  limit: 100
     t.string   "pay_bank",           limit: 80
+    t.string   "pay_account",        limit: 100
     t.string   "account_name",       limit: 50
     t.string   "money_type",         limit: 20
     t.string   "print_date",         limit: 30

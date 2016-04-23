@@ -4,9 +4,10 @@ Rails.application.routes.draw do
   match 'welcome',to: 'common#index', via: :get
   match 'login',to: 'common#login', via: :get
   match 'index', to: 'common#my_door', via: :get
-  match 'users/index',to: 'users#index', via: :get
-  match 'data_import/index',to: 'data_import#index',via: :get
+  match 'users/(index)',to: 'users#index', via: :get
+  match 'data_import/(index)',to: 'data_import#index',via: :get
   match 'data_import/record_data',to: 'data_import#record_data',via: :post
+  match 'data_analysis/(index)',to: 'data_analysis#index',via: :get
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

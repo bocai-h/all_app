@@ -38,6 +38,8 @@ gem 'workflow', '~> 1.2'
 gem 'roo', '~> 2.3', '>= 2.3.2'
 gem 'roo-xls', '~> 1.0'
 
+gem 'bootstrap-will_paginate', :git => 'git://github.com/yrgoldteeth/bootstrap-will_paginate.git'
+
 group :development do
   gem 'pry'
 end

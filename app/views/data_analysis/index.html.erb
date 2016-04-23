@@ -1,0 +1,22 @@
+<table class="table table-striped">
+  <tr>
+    <td>清单编号</td>
+    <td>代理人</td>
+    <td>代理人代码</td>
+    <td>代理证号</td>
+    <td>收款银行</td>
+    <td>收款账号</td>
+    <td>账号名称</td>
+  </tr>
+  <% @settlements.each do |s| %>
+      <tr>
+        <td><%= s.list_code %></td>
+        <td><%= s.agent_name %></td>
+        <td><%= s.agent_code %></td>
+        <td><%= s.agent_certif_code %></td>
+        <td><%= s.pay_bank %></td>
+        <td><%= s.pay_account %></td>
+        <td><%= s.account_name %></td>
+      </tr>
+  <% end %>
+</table>

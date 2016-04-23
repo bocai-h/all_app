@@ -14,7 +14,7 @@ class Settlement < ActiveRecord::Base
         # 第一列的值为下列或者为nil或者列为head 忽略
         exclude = ["合计:","代扣税金:","扣税后合计:","经理：","业务号","手续费联动级别："]
         #清单内容
-        list1 = {agent_name: "代理人/经纪人名称：",list_code: "清单编号：",agent_code: "代理人/经纪人代码：",agent_certif_code: "代理证号：",pay_bank: "收款银行：",money_type: "收款账号：",account_name: "账号名称：",money_type: "支付币种："}
+        list1 = {agent_name: "代理人/经纪人名称：",list_code: "清单编号：",agent_code: "代理人/经纪人代码：",agent_certif_code: "代理证号：",pay_bank: "收款银行：",pay_account: "收款账号：",account_name: "账号名称：",money_type: "支付币种："}
         list2 = {print_date: "打印日期：",contract: "保单数量：",cost_tax: "代扣税金：",after_cost_tax_fee: "扣税后手续费金额："}
         list = list1.merge(list2)
         (spreadsheet.first_row..spreadsheet.last_row).each do |i|
@@ -34,11 +34,15 @@ class Settlement < ActiveRecord::Base
                 row[11,0] = [" "]
               end
 
-              # 业务号是唯一的 如果检测到一个业务号相同就代表该文件已经被导入过了
-              is_exist = SettlementDetail.where("service_code = '#{row[0]}'")
-              if is_exist.present?
+              # 业务号是唯一的 如果检测到一个业务号相同且金额相同就代表该文件已经被导入过了
+              settle = SettlementDetail.where("service_code = '#{row[0]}'").first
+              is_money_same = settle.insurance_money.eql?(row[6]) if settle.present?
+              is_exist = settle.present? && is_money_same
+
+              if is_exist
                 raise "this templet is imported"
               end
+
               SettlementDetail.create(:settlement_id => self.last.id,:service_code => row[0],:insurance_name => row[1],
                                       :insurance_person => row[2],:insuranced_person => row[3],:money_type => row[4],
                                       :circle_time => row[5],:insurance_money => row[6],:actual_money => row[7],:handling_charge => row[8],
@@ -63,9 +67,10 @@ class Settlement < ActiveRecord::Base
       end
     rescue => e
         puts e.message, "\n"
-    ensure
-      return "error"
+        return "error"
     end
+
+    return ""
   end
 
   private
