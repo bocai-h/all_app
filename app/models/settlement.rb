@@ -1,5 +1,6 @@
 class Settlement < ActiveRecord::Base
   self.table_name = "settlements"
+  has_many :settlement_details,dependent: :destroy
   # 设置默认每页显示条数
   # self.per_page = 10
 
@@ -32,7 +33,7 @@ class Settlement < ActiveRecord::Base
               #详细
               # 车牌号可能会没有 导致row[11]往后跳了一列
               # 如果不是车牌号的模式 则插入一个空的填充11
-              unless row[11] =~ /^\p{Han}\w+$/u
+              unless row[11] =~ /^\p{Han}\w+[\w\p{Han}]$/u
                 row[11,0] = [" "]
               end
 

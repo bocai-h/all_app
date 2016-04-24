@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   match 'data_import/record_data',to: 'data_import#record_data',via: :post
   match 'data_analysis/(index)',to: 'data_analysis#index',via: :get
   match 'data_analysis/:id/show',to: 'data_analysis#show',via: :get
+  match 'data_analysis/service_statistics',to: 'data_analysis#service_statistics',via: :get
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

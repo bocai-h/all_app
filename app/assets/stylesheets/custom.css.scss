@@ -63,3 +63,25 @@ body {
   color: #004974;
   text-decoration: none;
 }
+.table #table_head{
+  background: #555555;
+  color: #FFFFFF;
+}
+.block_row{
+  margin-bottom: 50px;
+}
+.data_label{
+  font-weight: bold;
+}
+.page_header{
+  background-color: #cccccc;
+  text-align: left;
+}
+.lead{
+  font-weight: bold;
+}
+.page_help{
+  margin-bottom: 10px;
+}
+//显示边框 用来调试div用
+.divcss5{width:100px;height:50px;border:1px solid #F00}

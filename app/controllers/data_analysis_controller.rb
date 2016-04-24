@@ -4,6 +4,11 @@ class DataAnalysisController < ApplicationController
   end
 
   def show
-    @settlements = Settlement.find(params[:id])
+    @settlement = Settlement.find(params[:id])
+    @settlement_details = @settlement.settlement_details
+  end
+
+  def service_statistics
+
   end
 end

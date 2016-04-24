@@ -1,32 +1,50 @@
 <div class="row-fluid">
   <div class="col-md-12">
-    <table class="table table-striped">
-      <tr>
-        <td>操作</td>
-        <td>清单编号</td>
-        <td>代理人</td>
-        <td>代理人代码</td>
-        <td>代理证号</td>
-        <td>收款银行</td>
-        <td>收款账号</td>
-        <td>账号名称</td>
-      </tr>
-      <% @settlements.each do |s| %>
-          <tr>
-            <td><%= link_to "查看",{:controller => "data_analysis",:action => "show",:id => s.id}%></td>
-            <td><%= s.list_code %></td>
-            <td><%= s.agent_name %></td>
-            <td><%= s.agent_code %></td>
-            <td><%= s.agent_certif_code %></td>
-            <td><%= s.pay_bank %></td>
-            <td><%= s.pay_account %></td>
-            <td><%= s.account_name %></td>
-          </tr>
-      <% end %>
-    </table>
+    <div class="page_header">
+      <div class="page_title"><p class="lead">业务清单列表</p></div>
+    </div>
   </div>
 </div>
+
 <div class="row-fluid">
-  <%= will_paginate @settlements %>
+  <div class="col-md-12">
+     <div class="page_help">
+       <%= link_to "业务分析统计",{:controller => "data_analysis",:action => "service_statistics"},{:class => "btn btn-primary"}%>
+     </div>
+  </div>
+</div>
+
+<div class="row-fluid">
+  <div class="col-md-12">
+    <div class="table_area">
+      <table class="table table-striped">
+        <tr id="table_head">
+          <td>清单编号</td>
+          <td>代理人</td>
+          <td>代理人代码</td>
+          <td>代理证号</td>
+          <td>收款银行</td>
+          <td>收款账号</td>
+          <td>账号名称</td>
+        </tr>
+        <% @settlements.each do |s| %>
+            <tr>
+              <td><%= link_to s.list_code,{:controller => "data_analysis",:action => "show",:id => s.id}%></td>
+              <td><%= s.agent_name %></td>
+              <td><%= s.agent_code %></td>
+              <td><%= s.agent_certif_code %></td>
+              <td><%= s.pay_bank %></td>
+              <td><%= s.pay_account %></td>
+              <td><%= s.account_name %></td>
+            </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>
+ </div>
+<div class="row-fluid">
+  <div class="col-md-12">
+     <%= will_paginate @settlements %>
+  </div>
 </div>
 
