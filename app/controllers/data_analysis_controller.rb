@@ -9,6 +9,7 @@ class DataAnalysisController < ApplicationController
   end
 
   def service_statistics
-
+    settlement_details = SettlementDetail.person_statistics
+    @settlement_details = settlement_details.paginate(:page => params[:page]).order('created_at DESC')
   end
 end
