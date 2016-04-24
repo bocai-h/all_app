@@ -1,2 +1,5 @@
-$("body").append("<%= escape_javascript(render "login")%>");
+if($("#modal_div").length < 1)
+{
+    $("body").append("<%= escape_javascript(render "login")%>");
+}
 $(".btn-lg").trigger("click");
