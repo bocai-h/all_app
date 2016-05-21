@@ -83,8 +83,12 @@ Rails.application.configure do
 
   # 设置静态资源的压缩方式  如果 Gemfile 中有 sass-rails，就会自动用来压缩 CSS，无需设置 config.assets.css_compressor 选项
   # config.assets.css_compressor = :yui
-   config.assets.js_compressor = :uglify
+  config.assets.js_compressor = :uglify
 
   # 让rails自己处理静态资源  如果是在生产环境是由服务器端程序处理的如passenger
-  config.serve_static_assets = true
+  config.serve_static_files = true
+
+  config.generators do |g|
+    g.assets false
+  end
 end

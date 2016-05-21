@@ -1,6 +1,5 @@
-<div id="modal_div">
 <!-- Button trigger modal -->
-  <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#login_modal">
+  <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#login_modal" style="display: none;">
   </button>
   <div class="modal fade" id="login_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
@@ -8,38 +7,39 @@
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span></button>
-          <h2 class="modal-title" id="myModalLabel">登录</h2>
+          <h2 class="modal-title" id="myModalLabel">用户注册</h2>
         </div>
         <div class="modal-body">
-          <form class="form-horizontal">
+          <%= form_for(@user,:html => {:class =>"form-horizontal"}) do |f| %>
+          <!--<form class="form-horizontal">-->
             <div class="form-group">
-              <label for="email1" class="col-sm-2 control-label" >邮箱</label>
+              <label for="email" class="col-sm-2 control-label" >邮箱</label>
               <div class="col-sm-10">
                 <input type="email" class="form-control" id="email1" placeholder="Email">
+                <%#= f.text_field :email_address, {:class => "form-control",:id => "email", :placeholder => "Email"}%>
               </div>
             </div>
             <div class="form-group">
               <label for="password" class="col-sm-2 control-label">密码</label>
               <div class="col-sm-10">
                 <input type="password" class="form-control" id="password" placeholder="password">
+                <%#= f.password_field :password,{:class => "form-control", :id => "password", :placeholder => "Password"}%>
               </div>
             </div>
             <div class="form-group">
-              <div class="col-sm-offset-2 col-sm-10">
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox"> 记住用户名称
-                  </label>
-                </div>
+              <label for="password_confirmation" class="col-sm-2 control-label">密码确认</label>
+              <div class="col-sm-10">
+                <input type="password" class="form-control" id="password_confirmation" placeholder="password_confirmation">
+                <%#= f.password_field :password_confirmation,{:class => "form-control", :id => "password_confirmation", :placeholder => "Password_Confirmation"}%>
               </div>
             </div>
-          </form>
+          <!--</form>-->
+          <% end %>
         </div>
         <div class="modal-footer">
-          <button type="submit" class="btn btn-primary">login</button>
+          <button type="submit" class="btn btn-primary">提交</button>
           <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
         </div>
       </div>
     </div>
   </div>
-</div>

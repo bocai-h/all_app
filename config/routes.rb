@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
   root 'common#index'
-
+  resources :users
   match 'common/index',to: 'common#index', via: :get
-  match 'common/login',to: 'common#login', via: :get
+  match 'sign_in',to: 'common#login', via: :get
+  match 'sign_up',to: 'common#sign_up', via: :get
   match 'index', to: 'common#my_door', via: :get
   match 'users/(index)',to: 'users#index', via: :get
   match 'data_import/(index)',to: 'data_import#index',via: :get

@@ -9,4 +9,11 @@ class CommonController < ApplicationController
       format.js
     end
   end
+
+  def sign_up
+    @user = User.new
+    respond_to do |format|
+      format.js
+    end
+  end
 end

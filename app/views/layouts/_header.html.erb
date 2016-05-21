@@ -29,7 +29,10 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">设置 <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li>
-              <%= link_modal "登录",{:controller => "common",:action => "login"},{:remote => true}%>
+              <%= link_modal "登录",sign_in_path,{:remote => true}%>
+            </li>
+            <li>
+              <%= link_modal "注册",sign_up_path,{:remote => true}%>
             </li>
             <!--<li role="separator" class="divider"></li>-->
             <!--<li><a href="#">Separated link</a></li>-->
