@@ -1,19 +1,15 @@
 class CommonController < ApplicationController
-  # layout "full_window", :only => [:index,:my_door]
+  # layout "application", :except => [:login,:sign_up]
   def index
     # render :layout => false
   end
 
   def login
-    respond_to do |format|
-      format.js
-    end
+    render :layout => false
   end
 
   def sign_up
     @user = User.new
-    respond_to do |format|
-      format.js
-    end
+    render :layout => false
   end
 end

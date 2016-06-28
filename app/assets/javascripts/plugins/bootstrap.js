@@ -15,7 +15,7 @@ function openModal(href){
             backdrop: 'static'
         });
     }else{
-        href += href.indexOf("?") > 0 ? "&_dom_id=null" : "?_dom_id=null"
+        //href += href.indexOf("?") > 0 ? "&_dom_id=null" : "?_dom_id=null"
         modalDialog.load(href, function(){
             //$('form', modalDialog).each(function(){
             //    var $form = $(this),
@@ -25,6 +25,15 @@ function openModal(href){
             //    $form.attr("action", $action);
             //});
         });
+        //$.ajax({
+        //    type: "get",
+        //    url: href,
+        //    contentType: "text/html",
+        //    async:false,
+        //    success: function(data){
+        //        modalDialog.html(data);
+        //    }
+        //})
     }
 }
 
@@ -43,7 +52,7 @@ function buildModal(){
    return $(frame);
 }
 
-$(function(){
+$(document).ready(function(){
     $("a[rel=modal]").on("click",function(e){
         e.preventDefault();
         var href = $(this).attr('href');
