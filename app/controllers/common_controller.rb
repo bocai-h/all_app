@@ -5,11 +5,11 @@ class CommonController < ApplicationController
   end
 
   def login
-    render :layout => false
+    # render :layout => false
   end
 
   def sign_up
     @user = User.new
-    render :layout => false
+    # render :layout => false
   end
 end

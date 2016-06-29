@@ -40,6 +40,7 @@ gem 'roo-xls', '~> 1.0'
 
 gem 'bootstrap-will_paginate', :git => 'git://github.com/yrgoldteeth/bootstrap-will_paginate.git'
 
+# 密码加密gem
 gem 'bcrypt-ruby', '~> 3.1', '>= 3.1.5'
 
 group :development do
