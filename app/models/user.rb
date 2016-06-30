@@ -13,5 +13,5 @@ class User < ActiveRecord::Base
 
   # 密码是虚拟字段只存在于内存中  最小长度为6
   validate :password, length: { minimum: 6 }
-  
+
 end

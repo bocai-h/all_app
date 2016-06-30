@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'pages/error_404'
+
   root 'common#index'
   resources :users
   match 'common/index',to: 'common#index', via: :get
@@ -67,4 +69,8 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+  # 在生产环境中拦截所有的非正常路由访问
+  if Rails.env.production?
+    match "*path",to: "pages#error_404",via: :all
+  end
 end
