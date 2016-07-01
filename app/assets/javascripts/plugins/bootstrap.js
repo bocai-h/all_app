@@ -17,13 +17,13 @@ function openModal(href){
     }else{
         //href += href.indexOf("?") > 0 ? "&_dom_id=null" : "?_dom_id=null"
         modalDialog.load(href, function(){
-            //$('form', modalDialog).each(function(){
-            //    var $form = $(this),
-            //        $action = $form.attr("action");
-            //    $action += $action.indexOf("?") > 0 ? "&_dom_id=linkModal" : "?_dom_id=linkModal";
-            //    $form.data("remote", true);
-            //    $form.attr("action", $action);
-            //});
+            $('form', modalDialog).each(function(){
+                var $form = $(this),
+                    $action = $form.attr("action");
+                $action += $action.indexOf("?") > 0 ? "&_dom_id=linkModal" : "?_dom_id=linkModal";
+                $form.data("remote", true);
+                $form.attr("action", $action);
+            });
         });
         //$.ajax({
         //    type: "get",
