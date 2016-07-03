@@ -18,6 +18,16 @@ class UsersController < ApplicationController
   def show
   end
 
+  # 验证邮箱是否已经被注册
+  def validate_email_avaiable
+    user = User.find_by_email(params[:email])
+    if user.present?
+     render json: "false"
+    else
+      render json: "true"
+    end
+  end
+
   private
   def user_params
     params.require(:user).permit(:nick_name,:email,:password,:password_confirmation)

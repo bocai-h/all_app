@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   match 'sign_in',to: 'common#login', via: :get
   match 'sign_up',to: 'common#sign_up', via: :get
   match 'index', to: 'common#my_door', via: :get
-  match 'users/(index)',to: 'users#index', via: :get
+  get 'email_validate',to: 'users#validate_email_avaiable'
   match 'data_import/(index)',to: 'data_import#index',via: :get
   match 'data_import/record_data',to: 'data_import#record_data',via: :post
   match 'data_analysis/(index)',to: 'data_analysis#index',via: :get

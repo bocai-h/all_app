@@ -60,7 +60,19 @@
             required: true,
             maxlength: 50
         },
-        "user[email]": "required",
+        "user[email]": {
+            required: true,
+            remote: {
+                url: "<%= email_validate_path %>",     //后台处理程序
+                type: "get",               //数据发送方式
+                dataType: "json",           //接受数据格式
+                data: {                     //要传递的数据
+                    email: function() {
+                        return $("#email").val();
+                    }
+                }
+            }
+        },
         "user[password]":{
             required: true,
             minlength: 6
@@ -73,9 +85,12 @@
       messages:{
           "user[nick_name]":{
               required: "请输入您的昵称",
-              maxlength: 50
+              maxlength: "最多可以输入 {0} 个字符"
           },
-          "user[email]": "请输入您的邮箱地址",
+          "user[email]": {
+              required: "请输入您的邮箱地址",
+              remote: "对不起该邮箱已经被注册"
+          },
           "user[password]":{
               required: "请输入您的密码",
               minlength: "密码最少需要六位长度"
