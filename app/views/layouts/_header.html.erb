@@ -42,8 +42,21 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+<div class="msg">
+  <div class="alert alert-success alert-dismissible" role="alert " id="success_info">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <strong>Welcome!</strong><span id="success_alert"></span>
+  </div>
+
+  <div class="alert alert-danger alert-dismissible" role="alert" id="danger_info">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <strong>Sorry!</strong><span id="danger_alert"></span>
+  </div>
+</div>
 <script type="text/javascript">
   $(function(){
+      $("#success_info").hide();
+      $("#danger_info").hide();
      <% href = "/#{params[:controller]}/#{params[:action]}"%>
       $(".navbar-nav .active").removeClass("active");
       $("a[href='<%= href %>']").parent().addClass("active");

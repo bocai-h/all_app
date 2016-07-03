@@ -25,15 +25,6 @@ function openModal(href){
                 $form.attr("action", $action);
             });
         });
-        //$.ajax({
-        //    type: "get",
-        //    url: href,
-        //    contentType: "text/html",
-        //    async:false,
-        //    success: function(data){
-        //        modalDialog.html(data);
-        //    }
-        //})
     }
 }
 
