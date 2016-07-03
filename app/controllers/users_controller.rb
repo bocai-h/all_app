@@ -16,6 +16,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @user = User.find(params[:id])
   end
 
   # 验证邮箱是否已经被注册

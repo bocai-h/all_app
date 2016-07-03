@@ -1,0 +1,9 @@
+//隐藏模态框
+$("#linkModal").modal('hide');
+//显示欢迎信息
+<% if @error.blank? %>
+  window.location.href = '<%= user_path @user %>'
+<% else %>
+  $("#danger_alert").html('<%= @error %>');
+  $("#danger_info").show();
+<% end %>

@@ -16,4 +16,20 @@ class User < ActiveRecord::Base
   # 密码是虚拟字段只存在于内存中  最小长度为6
   validates :password, length: { minimum: 6,message: "密码最少为6位长度"}
   has_secure_password
+
+  before_create :create_remember_token
+
+  def self.new_remember_token
+    SecureRandom.urlsafe_base64
+  end
+
+  def self.encrypt(token)
+    Digest::SHA1.hexdigest(token.to_s)
+  end
+
+  private
+     def self.create_remember_token
+       # 创建记忆权标
+        self.remember_token = User.encrypt(User.new_remember_token)
+     end
 end

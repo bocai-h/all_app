@@ -1,36 +1,27 @@
 module SessionsHelper
   def sign_in(user)
+    # 新生成一个记忆权标
     remember_token = User.new_remember_token
+    # cookie存储remember_token
     cookies.permanent[:remember_token] = remember_token
-    user.update_attribute(:remember_token, User.encrypt(remember_token))
-    #这里的self是必须的否则会认为current_user是一个局部变量
-    self.current_user= user
+    # 更新用户的记忆权标
+    user.update_attribute("remember_token",User.encrypt(remember_token))
+    # 设置当前用户
+    self.current_user = user
   end
 
-  def current_user= (user)
+  def current_user=(user)
+    # 创建了一个实例变量
     @current_user = user
   end
 
   def current_user
+    # 数据库中存储的是加密过后的权标
     remember_token = User.encrypt(cookies[:remember_token])
-    @current_user ||= User.find_by(remember_token: remember_token )
+    @curren_user ||= User.find_by_remember_token(remember_token)
   end
 
-  def current_user?(user)
-   user == current_user
-  end
-
-  def signed_in_user
-    unless signed_in?
-      flash[:danger] = "Please Sign in"
-      store_location
-      redirect_to signin_url
-    end
-    #简易版 flash[:error] flash[:notice]可以 flash[:success]不行
-    # redirect_to signin_url, notice: "Please sign in." unless signed_in?
-  end
-
-  def signed_in?
+  def sign_in?
     !current_user.nil?
   end
 
@@ -38,15 +29,4 @@ module SessionsHelper
     self.current_user = nil
     cookies.delete(:remember_token)
   end
-
-  def redirect_back_or(default)
-    redirect_to(session[:return_to] || default)
-    session.delete(:return_to)
-  end
-
-  #request是rails内置的对象
-  def store_location
-    session[:return_to] = request.fullpath
-  end
-
 end
