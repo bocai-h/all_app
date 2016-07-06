@@ -28,7 +28,7 @@ class User < ActiveRecord::Base
   end
 
   private
-     def self.create_remember_token
+     def create_remember_token
        # 创建记忆权标
         self.remember_token = User.encrypt(User.new_remember_token)
      end
