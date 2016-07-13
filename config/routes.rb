@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   match 'data_analysis/:id/show',to: 'data_analysis#show',via: :get
   match 'data_analysis/service_statistics',to: 'data_analysis#service_statistics',via: :get
 
+  match 'sessions/destroy',to: 'sessions#destroy',via: :delete
   resources :sessions, only: ["new","create","destroy"]
 
 
