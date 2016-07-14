@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   # 处理所有的controller的记录未找到异常
   if Rails.env.production?
+    # 没作用
     rescue_from ActiveRecord::RecordNotFound,with: :record_not_found
     # 也可以在controller这一层去拦截非法路由
     # rescue_from ActionController::RoutingError,with: :render_error_404

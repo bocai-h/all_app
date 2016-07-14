@@ -45,6 +45,9 @@ gem 'bcrypt-ruby', '~> 3.1', '>= 3.1.5'
 
 group :development do
   gem 'pry'
+  # 美化console输出的包
+  gem 'hirb', '~> 0.7.3'
+  gem 'hirb-unicode', '~> 0.0.5'
 end
 
 group :develop,:test do
