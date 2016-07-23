@@ -31,6 +31,10 @@ module SessionsHelper
   end
 
   def remember_me user_name
-    cookies[:user_name] = {:value => user_name,:expires => 1.minute.from_now }
+    cookies[:user_name] = {:value => user_name,:expires => 7.day.from_now }
+  end
+
+  def clear_remember_me
+    cookies.delete :user_name
   end
 end

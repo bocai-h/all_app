@@ -8,6 +8,9 @@ class SessionsController < ApplicationController
         sign_in @user
         if params[:remember_me] == "1"
           remember_me @user.email
+        else
+          # 去除记住我
+          clear_remember_me
         end
         flash[:success] = "登录成功,欢迎#{@user.nick_name}"
         format.html { redirect_to root_path }
