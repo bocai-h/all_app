@@ -28,7 +28,10 @@ jQuery(document).ready(function() {
             dataType: "json",
             success: function(result){
                 if(!result){
+                   $(".sign-up-form #form-username").addClass('input-error');
                    $("#notice").html(alert_msg());
+                }else{
+                   $(".sign-up-form #form-username").removeClass('input-error');
                 }
             }
         });

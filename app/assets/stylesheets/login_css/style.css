@@ -156,8 +156,12 @@ button.sign_up{
 	width: 100%;
 }
 
+.input-error {
+    border-color: #af4534;
+}
+
 .form-bottom form .input-error {
-	border-color: #4aaf51;
+	border-color: #af4534;
 }
 
 .social-login {
