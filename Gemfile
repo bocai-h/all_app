@@ -43,11 +43,15 @@ gem 'bootstrap-will_paginate', :git => 'git://github.com/yrgoldteeth/bootstrap-w
 # 密码加密gem
 gem 'bcrypt-ruby', '~> 3.1', '>= 3.1.5'
 
+gem 'paperclip', '~> 5.0'
+
 group :development do
   gem 'pry'
   # 美化console输出的包
   gem 'hirb', '~> 0.7.3'
   gem 'hirb-unicode', '~> 0.0.5'
+  # 配合chrome插件 rails_panel
+  gem 'meta_request'
 end
 
 group :develop,:test do
