@@ -8,11 +8,6 @@ Rails.application.routes.draw do
   match 'sign_up',to: 'common#sign_up', via: :get
   match 'index', to: 'common#my_door', via: :get
   get 'email_validate',to: 'users#validate_email_avaiable'
-  match 'data_import/(index)',to: 'data_import#index',via: :get
-  match 'data_import/record_data',to: 'data_import#record_data',via: :post
-  match 'data_analysis/(index)',to: 'data_analysis#index',via: :get
-  match 'data_analysis/:id/show',to: 'data_analysis#show',via: :get
-  match 'data_analysis/service_statistics',to: 'data_analysis#service_statistics',via: :get
 
   match 'sessions/destroy',to: 'sessions#destroy',via: :delete
   resources :sessions, only: ["new","create","destroy"]
@@ -73,7 +68,8 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
   # 在生产环境中拦截所有的非正常路由访问
-  if Rails.env.production?
-    match "*path",to: "pages#error_404",via: :all
-  end
+  # if Rails.env.production?
+  #   match "*path",to: "pages#error_404",via: :all
+  # end
+  match "*path",to: "pages#error_404",via: :all
 end
