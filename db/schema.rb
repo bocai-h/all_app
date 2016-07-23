@@ -24,43 +24,6 @@ ActiveRecord::Schema.define(version: 20160703150925) do
     t.datetime "updated_at",              null: false
   end
 
-  create_table "settlement_details", force: :cascade do |t|
-    t.string   "settlement_id",         limit: 36,  null: false
-    t.string   "service_code",          limit: 100
-    t.string   "car_number",            limit: 50
-    t.string   "insurance_name",        limit: 50
-    t.string   "insurance_person",      limit: 50
-    t.string   "insuranced_person",     limit: 50
-    t.string   "money_type",            limit: 10
-    t.string   "circle_time",           limit: 5
-    t.string   "insurance_money",       limit: 20
-    t.string   "actual_money",          limit: 20
-    t.string   "handling_charge",       limit: 20
-    t.string   "handling_charge_ratio", limit: 5
-    t.string   "start_date",            limit: 20
-    t.string   "service_department",    limit: 200
-    t.string   "comment",               limit: 500
-    t.datetime "created_at",                        null: false
-    t.datetime "updated_at",                        null: false
-  end
-
-  create_table "settlements", force: :cascade do |t|
-    t.string   "agent_name",         limit: 30
-    t.string   "agent_code",         limit: 100
-    t.string   "list_code",          limit: 100
-    t.string   "agent_certif_code",  limit: 100
-    t.string   "pay_bank",           limit: 80
-    t.string   "pay_account",        limit: 100
-    t.string   "account_name",       limit: 50
-    t.string   "money_type",         limit: 20
-    t.string   "print_date",         limit: 30
-    t.string   "contract",           limit: 3
-    t.string   "cost_tax",           limit: 20
-    t.string   "after_cost_tax_fee", limit: 20
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
-  end
-
   create_table "users", force: :cascade do |t|
     t.string   "nick_name",       limit: 50,  null: false
     t.string   "email",           limit: 30,  null: false

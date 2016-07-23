@@ -33,10 +33,13 @@ gem 'twitter-bootstrap-rails', '~> 3.2', '>= 3.2.2'
 
 gem 'uuid', '~> 2.3', '>= 2.3.8'
 
-gem 'workflow', '~> 1.2'
+# gem 'workflow', '~> 1.2'
 
 gem 'roo', '~> 2.3', '>= 2.3.2'
 gem 'roo-xls', '~> 1.0'
+
+#基于白名单Html css验证
+gem 'sanitize', '~> 4.1'
 
 gem 'bootstrap-will_paginate', :git => 'git://github.com/yrgoldteeth/bootstrap-will_paginate.git'
 

@@ -24,6 +24,6 @@ class ApplicationController < ActionController::Base
   end
 
   def record_not_found
-    render plain: "404 Not Found", status: 404
+    render file: "#{Rails.root}/public/404.html"
   end
 end

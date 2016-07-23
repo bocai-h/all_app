@@ -5,7 +5,6 @@ class CommonController < ApplicationController
   end
 
   def login
-    # render :layout => false
   end
 
   def sign_up

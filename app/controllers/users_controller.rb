@@ -5,13 +5,16 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    if @user.save
-      flash[:success] = "Welcome to the All App!"
-    else
-      errors = @user.errors.values.flatten
-      # 删除has_secure_password的提示消息
-      errors.delete("can't be blank")
-      flash[:warning] = "注册失败:" + errors.join(" ")
+    respond_to do |format|
+      if @user.save
+        # 注册成功 设置为登录状态
+        sign_in @user
+        flash[:success] = "注册成功,欢迎#{@user.nick_name}"
+        format.html { redirect_to root_path }
+      else
+        flash.now[:warning] = "注册失败"
+        format.html { render "common/sign_up" }
+      end
     end
   end
 
