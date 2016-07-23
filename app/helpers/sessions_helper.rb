@@ -29,4 +29,8 @@ module SessionsHelper
     self.current_user = nil
     cookies.delete(:remember_token)
   end
+
+  def remember_me user_name
+    cookies[:user_name] = {:value => user_name,:expires => 1.minute.from_now }
+  end
 end

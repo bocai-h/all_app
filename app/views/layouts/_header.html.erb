@@ -34,10 +34,10 @@
                     <li>
                       <%= link_to "登录", sign_in_path %>
                     </li>
+                    <li>
+                      <%= link_to "注册", sign_up_path %>
+                    </li>
                 <% end %>
-                <li>
-                  <%= link_to "注册", sign_up_path %>
-                </li>
                 <% if sign_in? %>
                     <li role="separator" class="divider"></li>
                     <li><%= link_to "注销", {:controller => "sessions", :action => "destroy"}, :method => "delete" %></li>

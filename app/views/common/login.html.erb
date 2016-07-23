@@ -26,6 +26,11 @@
                     <label class="sr-only" for="form-password">Password</label>
                     <%= f.password_field :password, :class => "form-password form-control", :id => "form-password",:placeholder => "Password...",:autocomplete => "off"%>
                   </div>
+                    <div class="form-group">
+                      <label class="sr-only" for="form-remember-me">remember-me</label>
+                      <%= check_box_tag :remember_me,"1",:html => {:class => "form-remember-me form-control", :id => "form-remember-me", :autocomplete => "off"} %>&nbsp;remembe
+                      me
+                    </div>
                   <button type="submit" class="btn">Sign in!</button>
                 <% end %>
               </div>
@@ -34,3 +39,10 @@
         </div>
       </div>
     </div>
+   <script>
+      $(function(){
+          <% if @user_name.present? %>
+            $("#form-username").val('<%= @user_name %>');
+          <% end %>
+      });
+   </script>

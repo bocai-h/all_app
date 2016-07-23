@@ -5,6 +5,7 @@ class CommonController < ApplicationController
   end
 
   def login
+    @user_name = cookies[:user_name]
   end
 
   def sign_up
