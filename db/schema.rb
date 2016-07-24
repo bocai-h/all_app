@@ -11,7 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160724130303) do
+ActiveRecord::Schema.define(version: 20160724144733) do
+
+  create_table "user_generals", force: :cascade do |t|
+    t.string   "user_id",      limit: 36,  null: false
+    t.string   "name",         limit: 50,  null: false
+    t.integer  "age",          limit: 4,   null: false
+    t.string   "sex",          limit: 10,  null: false
+    t.string   "hobby",        limit: 150
+    t.string   "mobile_phone", limit: 20,  null: false
+    t.string   "address",      limit: 100
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
+  add_index "user_generals", ["user_id"], name: "index_user_generals_on_user_id", unique: true, using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "nick_name",       limit: 50,  null: false

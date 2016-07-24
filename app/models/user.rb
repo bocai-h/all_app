@@ -19,6 +19,9 @@ class User < ActiveRecord::Base
 
   before_create :create_remember_token
 
+  # 一个账户只能拥有一套资料
+  has_one :user_general, foreign_key: :user_id
+
   def self.new_remember_token
     SecureRandom.urlsafe_base64
   end
