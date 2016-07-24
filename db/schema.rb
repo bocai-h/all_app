@@ -11,18 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160703150925) do
-
-  create_table "articles", force: :cascade do |t|
-    t.string   "title",       limit: 50,  null: false
-    t.string   "content",     limit: 500, null: false
-    t.string   "author",      limit: 32,  null: false
-    t.string   "status_code", limit: 30
-    t.string   "created_by",  limit: 36
-    t.string   "updated_by",  limit: 36
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
-  end
+ActiveRecord::Schema.define(version: 20160724130303) do
 
   create_table "users", force: :cascade do |t|
     t.string   "nick_name",       limit: 50,  null: false
