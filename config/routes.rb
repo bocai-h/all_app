@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get 'email_validate',to: 'users#validate_email_avaiable'
 
   match 'sessions/destroy',to: 'sessions#destroy',via: :delete
-  resources :sessions, only: ["new","create","destroy"]
+  resources :sessions, only: ["new","create"]
 
 
   # The priority is based upon order of creation: first created -> highest priority.
