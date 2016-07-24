@@ -43,12 +43,20 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    addressable (2.4.0)
     arel (6.0.3)
     bcrypt (3.1.11)
     bcrypt-ruby (3.1.5)
       bcrypt (>= 3.1.3)
     builder (3.2.2)
     callsite (0.0.11)
+    capybara (2.7.1)
+      addressable
+      mime-types (>= 1.16)
+      nokogiri (>= 1.3.3)
+      rack (>= 1.0.0)
+      rack-test (>= 0.5.4)
+      xpath (~> 2.0)
     climate_control (0.0.3)
       activesupport (>= 3.0)
     cocaine (0.5.8)
@@ -164,6 +172,10 @@ GEM
       nokogiri
       roo (>= 2.0.0beta1, < 3)
       spreadsheet (> 0.9.0)
+    rspec (3.5.0)
+      rspec-core (~> 3.5.0)
+      rspec-expectations (~> 3.5.0)
+      rspec-mocks (~> 3.5.0)
     rspec-core (3.5.0)
       rspec-support (~> 3.5.0)
     rspec-expectations (3.5.0)
@@ -230,6 +242,8 @@ GEM
     uuid (2.3.8)
       macaddr (~> 1.0)
     will_paginate (3.1.0)
+    xpath (2.0.0)
+      nokogiri (~> 1.3)
 
 PLATFORMS
   ruby
@@ -237,6 +251,7 @@ PLATFORMS
 DEPENDENCIES
   bcrypt-ruby (~> 3.1, >= 3.1.5)
   bootstrap-will_paginate!
+  capybara (~> 2.7, >= 2.7.1)
   coffee-rails (~> 4.0.0)
   hirb (~> 0.7.3)
   hirb-unicode (~> 0.0.5)
@@ -249,6 +264,7 @@ DEPENDENCIES
   rails (= 4.2.0)
   roo (~> 2.3, >= 2.3.2)
   roo-xls (~> 1.0)
+  rspec (~> 3.5)
   rspec-rails (~> 3.5)
   sanitize (~> 4.1)
   sass-rails (~> 5.0, >= 5.0.4)

@@ -55,6 +55,9 @@ group :development do
   gem 'hirb-unicode', '~> 0.0.5'
   # 配合chrome插件 rails_panel
   gem 'meta_request'
+  # BDD for ruby
+  gem 'rspec', '~> 3.5'
+  gem 'capybara', '~> 2.7', '>= 2.7.1'
 end
 
 group :develop,:test do
