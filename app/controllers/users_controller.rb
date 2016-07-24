@@ -26,9 +26,15 @@ class UsersController < ApplicationController
   def validate_email_avaiable
     user = User.find_by_email(params[:email])
     if user.present?
-     render json: "false"
+     render json: {:result => "exist"}
     else
-      render json: "true"
+      email_format = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+      if email_format !~ params[:email]
+        # 如果格式不匹配
+        render json: {:result => "wrong_format"}
+      else
+        render json: {:result => "true"}
+      end
     end
   end
 

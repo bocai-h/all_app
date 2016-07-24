@@ -22,27 +22,36 @@ jQuery(document).ready(function() {
     });
     //验证邮箱是否已经被注册过了
     $(".sign-up-form #form-username").change(function(){
-        $.ajax({
-            url: "email_validate",
-            type: "GET",
-            data: { email: this.value,_dom_id: "form-container" },
-            dataType: "json",
-            success: function(result){
-                if(!result){
-                   $(".sign-up-form #form-username").addClass('input-error');
-                   $("#notice").html(alert_msg());
-                }else{
-                   $(".sign-up-form #form-username").removeClass('input-error');
+        if(this.value != ""){
+            $.ajax({
+                url: "email_validate",
+                type: "GET",
+                data: { email: this.value,_dom_id: "form-container" },
+                dataType: "json",
+                success: function(data){
+                    if(data["result"] == "exist"){
+                        var message = "邮箱已被注册";
+                        $(".sign-up-form #form-username").addClass('input-error');
+                        $("#notice").html(alert_msg(message));
+                    }else if(data["result"] == "wrong_format"){
+                        var message = "非法邮箱";
+                        $(".sign-up-form #form-username").addClass('input-error');
+                        $("#notice").html(alert_msg(message));
+                    }else{
+                        $(".sign-up-form #form-username").removeClass('input-error');
+                    }
                 }
-            }
-        });
+            });
+        }else{
+            $(".sign-up-form #form-username").removeClass('input-error');
+        }
     });
 });
 
-function alert_msg(){
+function alert_msg(message){
     var info = "<div class='alert alert-warning alert-dismissible' role='alert'>" +
                "<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>" +
-               "<strong>Warning!</strong>邮箱已被注册</div>";
+               "<strong>Warning!</strong>"+ message +"</div>";
 
     return info;
 }

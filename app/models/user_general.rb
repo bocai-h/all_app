@@ -7,5 +7,5 @@ class UserGeneral < ActiveRecord::Base
   validates_presence_of :sex,"性别不能为空"
   validates_presence_of  :mobile_phone,message: "联系方式不能为空"
   # age只允许为整数且最大要小于140
-  validates :age,numericality: { only_integer: true,less_than: 140 },message: "年龄只能为数字"
+  validates :age,numericality: { only_integer: true,less_than: 140 },message: "年龄只能为整数"
 end
