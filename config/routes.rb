@@ -3,10 +3,8 @@ Rails.application.routes.draw do
 
   root 'common#index'
   resources :users
-  match 'common/index',to: 'common#index', via: :get
-  match 'sign_in',to: 'common#login', via: :get
-  match 'sign_up',to: 'common#sign_up', via: :get
-  match 'index', to: 'common#my_door', via: :get
+  get 'sign_in',to: 'common#login'
+  get 'sign_up',to: 'common#sign_up'
   get 'email_validate',to: 'users#validate_email_avaiable'
 
   match 'sessions/destroy',to: 'sessions#destroy',via: :delete

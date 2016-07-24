@@ -24,7 +24,8 @@ jQuery(document).ready(function() {
     $(".sign-up-form #form-username").change(function(){
         $.ajax({
             url: "email_validate",
-            data: { email: this.value },
+            type: "GET",
+            data: { email: this.value,_dom_id: "form-container" },
             dataType: "json",
             success: function(result){
                 if(!result){
