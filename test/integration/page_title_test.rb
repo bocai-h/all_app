@@ -9,7 +9,7 @@ class PageTitleTest < ActionDispatch::IntegrationTest
         expect(page).to have_title("All app")
       end
     end
-    
+
     describe "Login page" do
       it "should have title 'login'" do
         visit "/sign_in"
