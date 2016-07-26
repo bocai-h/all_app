@@ -8,5 +8,12 @@ class SignUpContentTest < ActionDispatch::IntegrationTest
         expect(page).to have_content('Sign up!')
       end
     end
+
+    describe "login",:type => :feature do
+      it "shouldn't have content 'Sign up!'" do
+        visit 'sign_in'
+        expect(page).not_to have_content('Sign up!')
+      end
+    end
   end
 end

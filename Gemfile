@@ -63,5 +63,6 @@ group :develop,:test do
   gem 'guard', '~> 2.14'
   gem 'rspec-rails', '~> 3.5'
   gem 'guard-rspec', '~> 4.7', '>= 4.7.2'
+  gem 'spork-rails', '~> 4.0'
 end
 
