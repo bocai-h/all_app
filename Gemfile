@@ -55,12 +55,13 @@ group :development do
   gem 'hirb-unicode', '~> 0.0.5'
   # 配合chrome插件 rails_panel
   gem 'meta_request'
-  # BDD for ruby
-  gem 'rspec', '~> 3.5'
-  gem 'capybara', '~> 2.7', '>= 2.7.1'
 end
 
 group :develop,:test do
+  gem 'capybara', '~> 2.7', '>= 2.7.1'
+  # 检测文件系统的改动 只有改动过的集成测试文件才会被执行
+  gem 'guard', '~> 2.14'
   gem 'rspec-rails', '~> 3.5'
+  gem 'guard-rspec', '~> 4.7', '>= 4.7.2'
 end
 
