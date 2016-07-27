@@ -1,19 +1,18 @@
 require 'rails_helper'
 
 class SignUpContentTest < ActionDispatch::IntegrationTest
-  describe "Sign up",:type => :feature do
-    describe "Sign up content" do
-      it "should have content 'Sign up!'" do
-        visit 'sign_up'
-        expect(page).to have_content('Sign up!')
-      end
-    end
+  describe "Sign up", :type => :feature do
+    subject { page }
+    before { visit sign_up_path }
+    # it "should have content 'Sign up!'" do
+    #   expect(page).to have_content('Sign up!')
+    # end
+    it { should have_content('Sign up!') }
 
-    describe "login",:type => :feature do
-      it "shouldn't have content 'Sign up!'" do
-        visit 'sign_in'
-        expect(page).not_to have_content('Sign up!')
-      end
-    end
+    # it "shouldn't have content 'login!'" do
+    #   expect(page).not_to have_content('Sign in')
+    # end
+    it { should_not have_content('Sign in') }
+
   end
 end

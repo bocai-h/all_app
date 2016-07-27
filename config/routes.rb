@@ -3,9 +3,9 @@ Rails.application.routes.draw do
 
   root 'common#index'
   resources :users
-  get 'sign_in',to: 'common#login'
-  get 'sign_up',to: 'common#sign_up'
-  get 'email_validate',to: 'users#validate_email_avaiable'
+  get '/sign_in',to: 'common#login'
+  get '/sign_up',to: 'common#sign_up'
+  get '/email_validate',to: 'users#validate_email_avaiable'
 
   match 'sessions/destroy',to: 'sessions#destroy',via: :delete
   resources :sessions, only: ["new","create"]

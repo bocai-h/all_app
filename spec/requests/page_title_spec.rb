@@ -5,21 +5,21 @@ class PageTitleTest < ActionDispatch::IntegrationTest
     let(:base_title){ "All app" }
     describe "Home page" do
       it "should have title 'All app'" do
-        visit "/"
+        visit root_path
         expect(page).to have_title("All app")
       end
     end
 
     describe "Login page" do
       it "should have title 'login'" do
-        visit "/sign_in"
+        visit sign_in_path
          expect(page).to have_title("#{base_title} | login")
       end
     end
 
     describe "Sign up page" do
       it "should have title 'sign up'" do
-        visit "/sign_up"
+        visit sign_up_path
         expect(page).to have_title("#{base_title} | sign up")
       end
     end
