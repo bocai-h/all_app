@@ -3,7 +3,8 @@ require 'helpers'
 
 class PageTitleTest < ActionDispatch::IntegrationTest
   describe "every page" do
-    let(:base_title){ "All app" }
+    # let类似于赋值
+    # let(:base_title){ "All app" }
     describe "Home page" do
       it "should have title 'All app'" do
         visit root_path
