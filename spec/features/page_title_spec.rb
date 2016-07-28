@@ -1,5 +1,4 @@
 require 'rails_helper'
-require 'helpers'
 
 class PageTitleTest < ActionDispatch::IntegrationTest
   describe "every page" do
