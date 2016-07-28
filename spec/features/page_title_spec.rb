@@ -3,27 +3,20 @@ require 'helpers'
 
 class PageTitleTest < ActionDispatch::IntegrationTest
   describe "every page" do
-    # let类似于赋值
-    # let(:base_title){ "All app" }
+    subject { page }
     describe "Home page" do
-      it "should have title 'All app'" do
-        visit root_path
-        expect(page).to have_title(full_title(""))
-      end
+      before {visit root_path}
+      it { should have_title(full_title(""))}
     end
 
     describe "Login page" do
-      it "should have title 'login'" do
-        visit sign_in_path
-         expect(page).to have_title(full_title("login"))
-      end
+      before {visit sign_in_path}
+      it{ should have_title(full_title("login")) }
     end
 
     describe "Sign up page" do
-      it "should have title 'sign up'" do
-        visit sign_up_path
-        expect(page).to have_title(full_title("sign up"))
-      end
+      before { visit sign_up_path }
+      it { should have_title(full_title("sign up")) }
     end
   end
 end
