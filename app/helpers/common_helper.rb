@@ -6,6 +6,7 @@ module CommonHelper
                $(function(){
                   $(".navbar-nav .active").removeClass("active");
                   $("a[href='#{href}']").parent().addClass("active");
+                  $("a[href='#{href}']").attr("href","javascript:void(0);");
                })
               </script>)
 

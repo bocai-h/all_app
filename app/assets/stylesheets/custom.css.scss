@@ -67,3 +67,13 @@ body {
 }
 //显示边框 用来调试div用
 .divcss5{width:100px;height:50px;border:1px solid #F00}
+
+.panel-heading div{
+  display: inline;
+}
+.setting-icon{
+  margin-left: 20px;
+}
+.leave_chat_room a{
+  color: black;
+}

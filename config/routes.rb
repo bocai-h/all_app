@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  get 'pages/error_404'
-
   root 'common#index'
+
+  get 'pages/error_404'
   resources :users
   get '/sign_in',to: 'common#login'
   get '/sign_up',to: 'common#sign_up'
@@ -9,6 +9,11 @@ Rails.application.routes.draw do
 
   match 'sessions/destroy',to: 'sessions#destroy',via: :delete
   resources :sessions, only: ["new","create"]
+
+  get '/go_chat_room',to: 'welcome_chat_rooms#index'
+  post '/chat_room_authenticate',to: 'welcome_chat_rooms#chat_room_authenticate'
+  get '/chat_room',to: 'welcome_chat_rooms#chat_room'
+  get '/leave_chat_room',to: 'welcome_chat_rooms#leave_chat_room'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -5,6 +5,9 @@
   To use Glyphicons sprites instead of Font Awesome, replace with "require twitter-bootstrap-static/sprites"
   =require twitter-bootstrap-static/fontawesome
   */
-
+.navbar-nav {
+    /*padding-top: 15px;*/
+    /*padding-bottom: 15px;*/
+}
 
 
