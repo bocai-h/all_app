@@ -23,7 +23,7 @@ module AllApp
     # 导出的模式文件是ruby格式的
     config.active_record.schema_format
     # 设置Rails，让其在生产环境中服务于静态资源
-    config.serve_static_files = true
+    config.public_file_server.enabled = true
     #设置自己的静态资源路径
     # config.assets.paths << File.join(Rails.root, 'app', 'assets', 'images','logo')
     config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
@@ -38,5 +38,7 @@ module AllApp
     # config.autoload_paths += Dir["#{config.root}/lib/**/"]
     # 这一句应该写在ActiveRecord::Base里面的  但是由于这些是gem包不会被git跟踪  因此并非最好的方式
     # include Fwk::CustomId
+    #强制使用ssl(https)
+    # config.force_ssl = true
   end
 end

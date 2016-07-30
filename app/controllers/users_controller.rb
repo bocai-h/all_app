@@ -24,6 +24,7 @@ class UsersController < ApplicationController
 
   # 验证邮箱是否已经被注册
   def validate_email_avaiable
+    binding.pry
     user = User.find_by_email(params[:email])
     if user.present?
      render json: {:result => "exist"}

@@ -1,19 +1,19 @@
 # source 'https://ruby.taobao.org'
-source "https://rubygems.org"
+source "https://gems.ruby-china.org"
 # source "http://rubygems.org"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.0'
+gem 'rails', '5.0'
 # Use sqlite3 as the database for Active Record
 #gem 'sqlite3'
 gem 'mysql2', '0.3.20'
 # Use SCSS for stylesheets
 # gem 'sass-rails', '~> 4.0.3'
-gem 'sass-rails', '~> 5.0', '>= 5.0.4'
+gem 'sass-rails', '~> 5.0', '>= 5.0.6'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
-gem 'coffee-rails', '~> 4.0.0'
+gem 'coffee-rails', '~> 4.2', '>= 4.2.1'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 gem 'therubyracer',  platforms: :ruby
 
@@ -61,8 +61,8 @@ group :develop,:test do
   gem 'capybara', '~> 2.7', '>= 2.7.1'
   # 检测文件系统的改动 只有改动过的集成测试文件才会被执行
   gem 'guard', '~> 2.14'
-  gem 'rspec-rails', '~> 3.5'
+  gem 'rspec-rails', '~> 3.5', '>= 3.5.1'
   gem 'guard-rspec', '~> 4.7', '>= 4.7.2'
-  gem 'spork-rails', '~> 4.0'
+  # gem 'spork-rails', '~> 4.0'
 end
 
