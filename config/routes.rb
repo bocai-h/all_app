@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'channels/index'
+
   root 'common#index'
 
   get 'pages/error_404'
@@ -14,6 +16,8 @@ Rails.application.routes.draw do
   post '/chat_room_authenticate',to: 'welcome_chat_rooms#chat_room_authenticate'
   get '/chat_room',to: 'welcome_chat_rooms#chat_room'
   get '/leave_chat_room',to: 'welcome_chat_rooms#leave_chat_room'
+
+  resource :channel,:only => [:index,:new,:create,:destroy]
 
 
   # The priority is based upon order of creation: first created -> highest priority.

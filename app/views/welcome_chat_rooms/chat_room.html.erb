@@ -1,14 +1,21 @@
 <div class="panel panel-default">
   <div class="panel-heading">
     <div>welcome <%= @user_name %></div>
-    <div class="setting-icon leave_chat_room">
+    <div class="operation-list">
+      <div class="setting-icon">
+      <span class="glyphicon glyphicon-home" aria-hidden="true">
+       <%= link_to "新建房间", new_channel_path %>
+      </span>
+      </div>
+      <div class="setting-icon">
       <span class="glyphicon glyphicon-cog" aria-hidden="true">
        <%= link_to "登出", leave_chat_room_path %>
       </span>
+      </div>
     </div>
   </div>
   <div class="panel-body">
-
+    <%= render template: "channels/index" %>
   </div>
 </div>
 

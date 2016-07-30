@@ -39,3 +39,59 @@
     </div>
   </div>
 </div>
+<%= content_for :template_js do %>
+    <script>
+      $(function(){
+        $('.login-form input[type="text"], .login-form input[type="password"], .login-form textarea').on('focus', function() {
+          $(this).removeClass('input-error');
+        });
+
+        $('#sign-up-form').on('submit', function(e) {
+
+          $(this).find('input[type="text"], input[type="password"], textarea').each(function(){
+            if( $(this).val() == "" ) {
+              e.preventDefault();
+              $(this).addClass('input-error');
+            }
+            else {
+              $(this).removeClass('input-error');
+            }
+          });
+
+        });
+        //验证邮箱是否已经被注册过了
+        $(".sign-up-form #form-username").change(function(){
+          if(this.value != ""){
+            $.ajax({
+              url: "email_validate",
+              type: "GET",
+              data: { email: this.value,_dom_id: "form-container" },
+              dataType: "json",
+              success: function(data){
+                if(data["result"] == "exist"){
+                  var message = "邮箱已被注册";
+                  $(".sign-up-form #form-username").addClass('input-error');
+                  $("#notice").html(alert_msg(message));
+                }else if(data["result"] == "wrong_format"){
+                  var message = "非法邮箱";
+                  $(".sign-up-form #form-username").addClass('input-error');
+                  $("#notice").html(alert_msg(message));
+                }else{
+                  $(".sign-up-form #form-username").removeClass('input-error');
+                }
+              }
+            });
+          }else{
+            $(".sign-up-form #form-username").removeClass('input-error');
+          }
+        });
+        function alert_msg(message){
+          var info = "<div class='alert alert-warning alert-dismissible' role='alert'>" +
+              "<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>" +
+              "<strong>Warning!</strong>"+ message +"</div>";
+
+          return info;
+        }
+      })
+    </script>
+<% end %>
