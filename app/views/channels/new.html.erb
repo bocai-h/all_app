@@ -1,31 +1,69 @@
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Open modal for @mdo</button>
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@fat">Open modal for @fat</button>
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Open modal for @getbootstrap</button>
-...more buttons...
+<style type="text/css">
+  body {
+    background: black;
+  }
 
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="exampleModalLabel">New message</h4>
-      </div>
-      <div class="modal-body">
-        <form>
-          <div class="form-group">
-            <label for="recipient-name" class="control-label">Recipient:</label>
-            <input type="text" class="form-control" id="recipient-name">
-          </div>
-          <div class="form-group">
-            <label for="message-text" class="control-label">Message:</label>
-            <textarea class="form-control" id="message-text"></textarea>
-          </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Send message</button>
+  .row {
+    margin-top: 34px;
+
+  }
+
+  .btn-primary {
+    background-color: black;
+  }
+
+  .modal-dialog-lg {
+    font-size: 18px;
+    color: #0a0a0a;
+  }
+
+  .control-label {
+    float: left;
+  }
+
+  #channel_person_limit {
+    width: 855px;
+  }
+</style>
+<div class="row">
+  <div class="col-md-3"></div>
+  <div class="col-md-6">
+    <div class="modal_page_bg">
+      <div class="modal-dialog-lg" role="document">
+        <div class="modal-content">
+          <%= form_for @channel, url: {action: "create"}, html: {class: "new_channel_form"} do |f| %>
+              <div class="modal-body">
+                <div class="form-group">
+                  <label for="channel-name" class="control-label">房间名称:</label>
+                  <%= f.text_field :name, :class => "form-control", :id => "channel-name" %>
+                </div>
+                <div class="form-group">
+                  <label for="channel-description" class="control-label">房间描述:</label>
+                  <%= f.text_area :description, :class => "form-control", :id => "channel-description" %>
+                </div>
+                <div class="form-group chosen-select">
+                  <label for="person-limit" class="control-label">成员人数:</label></br>
+                  <%= f.select :person_limit, number_list, :class => "form-control", :id => "channel-person-limit" %>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <%= link_to "返回", chat_room_path, :class => "btn btn-default" %>
+                <%= f.submit "创建房间", :class => "btn btn-primary" %>
+              </div>
+          <% end %>
+        </div>
       </div>
     </div>
+    <div class="col-md-3"></div>
   </div>
 </div>
+
+<% content_for :template_js do %>
+    <script>
+      $(document).ready(function () {
+        $("#channel_person_limit").chosen({
+          direction: rtl
+        });
+      });
+    </script>
+<% end %>
