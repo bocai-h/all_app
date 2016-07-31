@@ -30,7 +30,6 @@ module AllApp
     config.assets.compress = true
     #在config/application.rb 文件中加入以下代码可以禁止生成控制器相关的静态资源：
     config.generators do |g|
-      g.assets false
       g.test_framework nil
     end
 

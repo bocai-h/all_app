@@ -48,6 +48,8 @@ gem 'bcrypt-ruby', '~> 3.1', '>= 3.1.5'
 
 gem 'paperclip', '~> 5.0'
 
+gem 'puma'
+
 group :development do
   gem 'pry'
   # 美化console输出的包
