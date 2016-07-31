@@ -39,7 +39,7 @@
                 <% end %>
                 <% if sign_in? %>
                     <li role="separator" class="divider"></li>
-                    <li><%= link_to "注销", {:controller => "sessions", :action => "destroy"}, :method => "delete" %></li>
+                    <li><%= link_to "注销",session_path, :method => "delete" %></li>
                 <% end %>
               </ul>
             </li>

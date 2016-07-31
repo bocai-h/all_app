@@ -1,2 +1,2 @@
-<li class="list-group-item"><%= channel.name %></li>
+<li class="list-group-item"><%= link_to channel.name,messages_index_path(channel.id),{id: channel.id,class: "channel_name" }%></li>
 

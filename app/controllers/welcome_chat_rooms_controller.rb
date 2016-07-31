@@ -18,6 +18,7 @@ class WelcomeChatRoomsController < ApplicationController
   end
 
   def chat_room
+    @channels = Channel.all
     respond_to do |format|
       if logined?
         @user_name = cookies[:user_name]

@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'channels/index'
-
   root 'common#index'
 
   get 'pages/error_404'
@@ -9,7 +7,7 @@ Rails.application.routes.draw do
   get '/sign_up',to: 'common#sign_up'
   get '/email_validate',to: 'users#validate_email_avaiable'
 
-  match 'sessions/destroy',to: 'sessions#destroy',via: :delete
+  delete 'session',to: 'sessions#destroy'
   resources :sessions, only: ["new","create"]
 
   get '/go_chat_room',to: 'welcome_chat_rooms#index'
@@ -19,6 +17,9 @@ Rails.application.routes.draw do
 
   resource :channel,:only => [:index,:new,:create,:destroy]
 
+  get 'messages/:id',to: 'chat_messages#index', as: "messages_index"
+
+  resource :message
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

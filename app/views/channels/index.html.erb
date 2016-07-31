@@ -1,3 +1,21 @@
 <ul class="list-group">
-  <%= render :partial => "channel",:collection => @channels %>
+  <%= render :partial => "channels/channel",:collection => @channels,:as => :channel %>
 </ul>
+<% content_for :template_js do %>
+    <script>
+      $(document).ready(function(){
+        $(".list-group-item").on("click",function(){
+         //window.location = $(this).children("a").attr("href");
+          $(this).children("a").trigger("click");
+        })
+        $("a").on("click",function(e){
+          this.click();
+          //阻止冒泡事件
+          e.stopPropagation();
+        })
+      });
+    </script>
+<% end %>
+
+<!-- $("a")[0].click();-->
+<!-- 子元素的点击事件会触发父元素的点击事件 会导致栈溢出-->

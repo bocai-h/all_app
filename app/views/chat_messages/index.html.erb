@@ -1,0 +1,31 @@
+<div class="panel panel-default">
+  <div class="panel-heading message_heading">
+    <div class="row">
+      <div class="col-md-12">
+        <%= form_for :message, url: message_path do |f| %>
+         <div class="message-content">
+          <div class="input-group">
+            <%= f.text_area :message,{ placeholder: "Message",class: "message_text"} %>
+          </div>
+           <div class="operation-list">
+              <div class="setting-icon">
+                <span class="glyphicon glyphicon-cog" aria-hidden="true">
+                  <%= link_to "退出房间", chat_room_path %>
+                </span>
+              </div>
+           </div>
+        </div>
+        </br>
+        <div>
+          <div class="input-group">
+            <%= f.submit "post",{class: "btn btn-default post-btn"}%>
+          </div>
+         </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="panel-body">
+    <%= render "chat_messages/talks" %>
+  </div>
+</div>
