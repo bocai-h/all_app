@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -13,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 20160703150925) do
 
-  create_table "articles", force: :cascade do |t|
+  create_table "articles", id: :string, limit: 36, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin" do |t|
     t.string   "title",       limit: 50,  null: false
     t.string   "content",     limit: 500, null: false
     t.string   "author",      limit: 32,  null: false
@@ -24,7 +23,7 @@ ActiveRecord::Schema.define(version: 20160703150925) do
     t.datetime "updated_at",              null: false
   end
 
-  create_table "settlement_details", force: :cascade do |t|
+  create_table "settlement_details", id: :string, limit: 36, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin" do |t|
     t.string   "settlement_id",         limit: 36,  null: false
     t.string   "service_code",          limit: 100
     t.string   "car_number",            limit: 50
@@ -44,7 +43,7 @@ ActiveRecord::Schema.define(version: 20160703150925) do
     t.datetime "updated_at",                        null: false
   end
 
-  create_table "settlements", force: :cascade do |t|
+  create_table "settlements", id: :string, limit: 36, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin" do |t|
     t.string   "agent_name",         limit: 30
     t.string   "agent_code",         limit: 100
     t.string   "list_code",          limit: 100
@@ -61,16 +60,15 @@ ActiveRecord::Schema.define(version: 20160703150925) do
     t.datetime "updated_at",                     null: false
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin" do |t|
     t.string   "nick_name",       limit: 50,  null: false
     t.string   "email",           limit: 30,  null: false
     t.string   "password_digest", limit: 200
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
     t.string   "remember_token",  limit: 200
+    t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
+    t.index ["remember_token"], name: "index_users_on_remember_token", using: :btree
   end
-
-  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
-  add_index "users", ["remember_token"], name: "index_users_on_remember_token", using: :btree
 
 end

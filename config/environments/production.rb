@@ -20,7 +20,7 @@ Rails.application.configure do
   # config.action_dispatch.rack_cache = true
 
   # Disable Rails's static asset server (Apache or nginx will already do this).
-  config.serve_static_files = false
+  config.public_file_server.enabled = true = false
 
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = :uglifier
@@ -86,7 +86,7 @@ Rails.application.configure do
   config.assets.js_compressor = :uglify
 
   # 让rails自己处理静态资源  如果是在生产环境是由服务器端程序处理的如passenger
-  config.serve_static_files = true
+  config.public_file_server.enabled = true
 
   config.generators do |g|
     g.assets false

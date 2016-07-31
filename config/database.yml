@@ -2,7 +2,7 @@
   development:
     adapter: mysql2
     encoding: utf8
-    database: all_app
+    database: cwc_app
     username: root
     password: root
     host: 127.0.0.1
