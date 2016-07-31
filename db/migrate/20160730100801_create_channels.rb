@@ -6,6 +6,5 @@ class CreateChannels < ActiveRecord::Migration[5.0]
       t.integer :person_limit                                   #房间人数
       t.timestamps
     end
-    change_column :channels,:id,:string,:limit => 36
   end
 end

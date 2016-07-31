@@ -1,6 +1,4 @@
-class UserGeneral < ActiveRecord::Base
-  self.table_name = "user_generals"
-
+class UserGeneral < ApplicationRecord
   # 一个人只有一套资料
   validates :user_id,uniqueness: true,message: "用户的基本资料已经存在"
   validates_presence_of :name,message: "姓名不能为空"

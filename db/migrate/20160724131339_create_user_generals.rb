@@ -1,7 +1,7 @@
 class CreateUserGenerals < ActiveRecord::Migration
   def change
     create_table :user_generals do |t|
-      t.string :user_id,:limit => 36,:null => false               #用户id
+      t.references :user,index: true,foreign_key: true
       t.string :name,:limit => 50,:null => false                  #姓名
       t.integer :age,:null => false                                #年龄
       t.string :sex,:limit => 10,:null => false                   #性别
@@ -10,6 +10,5 @@ class CreateUserGenerals < ActiveRecord::Migration
       t.string :address,:limit => 100                              #住址
       t.timestamps null: false
     end
-    change_column :user_generals,:id,:string,:limit => 36,:collate => "utf8_bin"
   end
 end

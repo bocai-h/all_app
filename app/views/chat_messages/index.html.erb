@@ -2,7 +2,9 @@
   <div class="panel-heading message_heading">
     <div class="row">
       <div class="col-md-12">
-        <%= form_for :message, url: message_path do |f| %>
+        <div class="channel-name-left">房间: <%= @channel.name %></div>
+        <%= form_for :message, url: chat_message_path do |f| %>
+         <%#= f.hidden_field :channel_id %>
          <div class="message-content">
           <div class="input-group">
             <%= f.text_area :message,{ placeholder: "Message",class: "message_text"} %>

@@ -1,6 +1,4 @@
-#encoding: utf-8
-class User < ActiveRecord::Base
-  self.table_name = "users"
+class User < ApplicationRecord
   # 名字必须存在  长度最大为50个字符
   validates :nick_name, presence: {message: "昵称不能为空"}
   validates :nick_name,length: {maximum: 50,too_long: "%{count} 个字符是昵称允许的最长长度"}
