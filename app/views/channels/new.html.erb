@@ -43,7 +43,7 @@
                 </div>
                 <div class="form-group chosen-select">
                   <label for="person-limit" class="control-label">成员人数:</label></br>
-                  <%= f.select :person_limit, number_list, :class => "form-control", :id => "channel-person-limit" %>
+                  <%= f.select :person_limit, number_list,{},{:class => "form-control", :id => "channel-person-limit"} %>
                 </div>
               </div>
               <div class="modal-footer">
@@ -60,9 +60,23 @@
 
 <% content_for :template_js do %>
     <script>
+      $("#new_channel").validate({
+        rules: {
+          "channel[name]": "required",
+          "channel[person_limit]": "required",
+        },
+        messages: {
+          "channel[name]": "请填写房间名称",
+          "channel[person_limit]": "请填写房间允许最大人数"
+        }
+      });
       $(document).ready(function () {
-        $("#channel_person_limit").chosen({
-          direction: rtl
+        $("#channel-person-limit").chosen({
+          placeholder_text_single: "请选择房间允许最大人数",
+          no_results_text:'木有结果啦!',
+          search_contains: true,
+          disable_search_threshold: 20,
+          single_backstroke_delete: false
         });
       });
     </script>

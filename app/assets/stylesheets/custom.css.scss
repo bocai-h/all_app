@@ -81,3 +81,7 @@ body {
   height: 900px;
   font-weight: 700;
 }
+//修复chosen字体靠右
+.chosen-container{
+  text-align: left;
+}

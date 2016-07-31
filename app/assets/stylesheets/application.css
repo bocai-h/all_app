@@ -13,7 +13,7 @@
  *= require_self
  *= require twitter-bootstrap-static/bootstrap
  *= require twitter-bootstrap-static/sprites
- *= require chosen
+ *= require plugins/chosen
  *= require custom
  *= require validation
  */
