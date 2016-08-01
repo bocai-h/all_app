@@ -111,6 +111,18 @@ body {
 }
 .channel-name-left{
   position: relative;
-  left: -450px;
+  left: -10px;
+  top: -80px;
   font-size: 18px;
+}
+.message_list{
+  font-size: 18px;
+  color: whitesmoke;
+}
+.message{
+  margin: 5px;
+  padding: 10px;
+  border: 1px solid #222;
+  border-radius: 8px;
+  -moz-border-radius:8px;
 }

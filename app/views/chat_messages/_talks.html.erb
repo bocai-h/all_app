@@ -5,6 +5,9 @@
         <div class="col-sm-1">
         </div>
         <div class="col-sm-10 talks_bg">
+          <div class="message_list">
+            <%= render :partial => "message_list",:collection => @messages,:as => :message %>
+          </div>
         </div>
         <div class="col-sm-1">
         </div>

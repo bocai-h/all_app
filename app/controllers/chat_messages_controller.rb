@@ -2,7 +2,6 @@ class ChatMessagesController < ApplicationController
   layout "modal_page",only: [:index]
   def index
     @channel = Channel.find(params[:id])
-    @new_massage = @channel.messages.build
     @messages = @channel.messages
   end
 

@@ -3,11 +3,12 @@
     <div class="row">
       <div class="col-md-12">
         <div class="channel-name-left">房间: <%= @channel.name %></div>
-        <%= form_for @new_massage,remote: true, url:  channel_chat_message_path do |f| %>
-            <%= f.hidden_field :channel_id %>
+        <%#= form_for @new_massage,remote: true, url:  channel_chat_message_path do |f| %>
+            <%#= f.hidden_field :channel_id %>
          <div class="message-content">
           <div class="input-group">
-            <%= f.text_area :content,{ placeholder: "Message",class: "message_text"} %>
+            <%#= f.text_area :content,{ placeholder: "Message",class: "message_text"} %>
+            <%= text_area_tag :content,"",{ placeholder: "Message",class: "message_text"} %>
           </div>
            <div class="operation-list">
               <div class="setting-icon">
@@ -20,10 +21,11 @@
         </br>
         <div>
           <div class="input-group">
-            <%= f.submit "post",{class: "btn btn-default post-btn"}%>
+            <%#= f.submit "post",{class: "btn btn-default post-btn"}%>
+            <%= submit_tag "post",{class: "btn btn-default post-btn"}%>
           </div>
          </div>
-        <% end %>
+        <%# end %>
       </div>
     </div>
   </div>

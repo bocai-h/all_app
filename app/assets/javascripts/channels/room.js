@@ -8,7 +8,7 @@
                 return function() {
                     var roomId;
                     roomId = _this.collection().data('channel-id');
-                    debugger;
+                    // debugger;
                     return _this.perform('follow', {
                         room_id: roomId
                     });
@@ -17,11 +17,11 @@
         },
         disconnected: function() {},
         received: function(data) {
-            debugger;
+            // debugger;
             return this.collection().append('<li>' + data.comment + '</li>');
         },
         speak: function(comment) {
-            debugger;
+            // debugger;
             return this.perform('speak', comment);
         }
     });
