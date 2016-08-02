@@ -4,11 +4,11 @@
       <div class="col-md-12">
         <div class="channel-name-left">房间: <%= @channel.name %></div>
         <%#= form_for @new_massage,remote: true, url:  channel_chat_message_path do |f| %>
-            <%#= f.hidden_field :channel_id %>
+            <%= hidden_field_tag :channel_id,@channel.id %>
          <div class="message-content">
           <div class="input-group">
             <%#= f.text_area :content,{ placeholder: "Message",class: "message_text"} %>
-            <%= text_area_tag :content,"",{ placeholder: "Message",class: "message_text"} %>
+            <%= text_area_tag :content,"",{ placeholder: "Message",class: "message_text",id: "message" } %>
           </div>
            <div class="operation-list">
               <div class="setting-icon">
@@ -22,7 +22,7 @@
         <div>
           <div class="input-group">
             <%#= f.submit "post",{class: "btn btn-default post-btn"}%>
-            <%= submit_tag "post",{class: "btn btn-default post-btn"}%>
+            <%= button_tag "post",{class: "btn btn-default post-btn","data-behavior": "room-speaker"}%>
           </div>
          </div>
         <%# end %>
@@ -30,7 +30,7 @@
     </div>
   </div>
   <div class="panel-body">
-    <div data-channel="messages" data-channel-id="<%= @channel.id %>">
+    <div>
       <%= render "chat_messages/talks" %>
     </div>
   </div>

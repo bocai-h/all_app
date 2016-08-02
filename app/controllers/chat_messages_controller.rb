@@ -7,6 +7,6 @@ class ChatMessagesController < ApplicationController
 
   def create
     @channel = Channel.find(params[:message][:channel_id])
-    @comment = Message.create! content: params[:message][:content], channel: @channel, author: cookies[:user_name]
+    @comment = Message.create! content: params[:message][:content], channel: @channel, author: cookies[:chat_user_name]
   end
 end

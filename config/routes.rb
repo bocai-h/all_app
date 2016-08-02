@@ -21,6 +21,8 @@ Rails.application.routes.draw do
     resource :chat_message,:only => :create
   end
 
+  # 把websocket服务以engine的方式挂载起来
   mount ActionCable.server => '/cable'
+
   match "*path",to: "pages#error_404",via: :all
 end
