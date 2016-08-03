@@ -196,6 +196,7 @@ GEM
       ffi (>= 0.5.0)
     rdoc (4.2.2)
       json (~> 1.4)
+    redis (3.3.1)
     ref (2.0.0)
     roo (2.4.0)
       nokogiri (~> 1)
@@ -300,6 +301,7 @@ DEPENDENCIES
   pry
   puma
   rails (= 5.0)
+  redis (~> 3.3, >= 3.3.1)
   roo (~> 2.3, >= 2.3.2)
   roo-xls (~> 1.0)
   rspec-rails (~> 3.5, >= 3.5.1)

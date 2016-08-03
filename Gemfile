@@ -50,6 +50,8 @@ gem 'paperclip', '~> 5.0'
 
 gem 'puma'
 
+gem 'redis', '~> 3.3', '>= 3.3.1'
+
 group :development do
   gem 'pry'
   # 美化console输出的包

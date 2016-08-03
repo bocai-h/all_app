@@ -40,5 +40,9 @@ module AllApp
     # include Fwk::CustomId
     #强制使用ssl(https)
     # config.force_ssl = true
+
+    # 关闭action_cable的跨域检查
+    config.action_cable.disable_request_forgery_protection = true
+    # config.action_cable.allowed_request_origins = ['http://rubyonrails.com', /http:\/\/ruby.*/]
   end
 end
