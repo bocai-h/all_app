@@ -1,16 +1,12 @@
-App.room = App.cable.subscriptions.create "RoomChannel",
-  connected: ->
+App.room = App.cable.subscriptions.create {channel: "RoomChannel", room: @channel},
+  connected:->
 # Called when the subscription is ready for use on the server
-
 
   disconnected: ->
 # Called when the subscription has been terminated by the server
 
   received: (data) ->
 # Called when there's incoming data on the websocket for this channel
-#   alert("ok")
-#   debugger
-#   console.log(data['message'])
    $(".message").eq(0).before(data['message'])
 
   speak: (room, message, user_name)->
@@ -26,6 +22,9 @@ App.room = App.cable.subscriptions.create "RoomChannel",
       return c.substring(nameEQ.length, c.length).replace(/"/g, '')  if c.indexOf(nameEQ) is 0
       i++
     ca
+  channel: ->
+    channel = $("#channel_id").val()
+    channel
 
   $(document).on 'click', '[data-behavior~=room-speaker]', () ->
     message = $("#message")

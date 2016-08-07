@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   get 'messages/:id',to: 'chat_messages#index', as: "messages_index"
 
   resource :channel,:only => [:index,:new,:create,:destroy] do
-    resource :chat_message,:only => :create
+    # resource :chat_message,:only => :create
   end
 
   # 把websocket服务以engine的方式挂载起来

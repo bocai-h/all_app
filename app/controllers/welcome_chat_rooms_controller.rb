@@ -18,7 +18,7 @@ class WelcomeChatRoomsController < ApplicationController
   end
 
   def chat_room
-    @channels = Channel.all
+    @channels = Channel.all.order("created_at DESC")
     respond_to do |format|
       if logined?
         @user_name = cookies[:chat_user_name]
