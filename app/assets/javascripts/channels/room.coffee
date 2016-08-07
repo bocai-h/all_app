@@ -1,4 +1,4 @@
-App.room = App.cable.subscriptions.create {channel: "RoomChannel", room: @channel},
+App.room = App.cable.subscriptions.create {channel: "RoomChannel", room: $("#channel_id").val()},
   connected:->
 # Called when the subscription is ready for use on the server
 
@@ -7,6 +7,7 @@ App.room = App.cable.subscriptions.create {channel: "RoomChannel", room: @channe
 
   received: (data) ->
 # Called when there's incoming data on the websocket for this channel
+   debugger
    $(".message").eq(0).before(data['message'])
 
   speak: (room, message, user_name)->
@@ -34,20 +35,4 @@ App.room = App.cable.subscriptions.create {channel: "RoomChannel", room: @channe
     message.val("")
     ""
 
-
-# App.Functions.readCookie = (name) ->
-#  nameEQ = name + "="
-#  ca = document.cookie.split(";")
-#  i = 0
-#  while i < ca.length
-#    c = ca[i]
-#    c = c.substring(1, c.length)  while c.charAt(0) is " "
-#    return c.substring(nameEQ.length, c.length).replace(/"/g, '')  if c.indexOf(nameEQ) is 0
-#    i++
-#  ca
-
-#App.Functions.setCookie = (cookieName, cookieValue) ->
-#  today = new Date()
-#  expire = new Date("2020-01-01 12:00:00")
-#  document.cookie = cookieName + "=" + escape(cookieValue) + ";expires=" + expire.toGMTString();
 
