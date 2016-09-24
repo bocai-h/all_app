@@ -1,0 +1,84 @@
+<style type="text/css">
+  body {
+    background: black;
+  }
+
+  .row {
+    margin-top: 34px;
+
+  }
+
+  .btn-primary {
+    background-color: black;
+  }
+
+  .modal-dialog-lg {
+    font-size: 18px;
+    color: #0a0a0a;
+  }
+
+  .control-label {
+    float: left;
+  }
+
+  #channel_person_limit {
+    width: 855px;
+  }
+</style>
+<div class="row">
+  <div class="col-md-3"></div>
+  <div class="col-md-6">
+    <div class="modal_page_bg">
+      <div class="modal-dialog-lg" role="document">
+        <div class="modal-content">
+          <%= form_for @channel, url: {action: "create"}, html: {class: "new_channel_form"} do |f| %>
+              <div class="modal-body">
+                <div class="form-group">
+                  <label for="channel-name" class="control-label">房间名称:</label>
+                  <%= f.text_field :name, :class => "form-control", :id => "channel-name" %>
+                </div>
+                <div class="form-group">
+                  <label for="channel-description" class="control-label">房间描述:</label>
+                  <%= f.text_area :description, :class => "form-control", :id => "channel-description" %>
+                </div>
+                <div class="form-group chosen-select">
+                  <label for="person-limit" class="control-label">成员人数:</label></br>
+                  <%= f.select :person_limit, number_list,{include_blank: true,:selected => 5 },{:class => "form-control", :id => "channel-person-limit"} %>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <%= link_to "返回", chat_room_path, :class => "btn btn-default" %>
+                <%= f.submit "创建房间", :class => "btn btn-primary" %>
+              </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3"></div>
+  </div>
+</div>
+
+<% content_for :template_js do %>
+    <script>
+      $(document).ready(function () {
+        $("#new_channel").validate({
+          errorClass: "validate_notice",
+          rules: {
+            "channel[name]": "required",
+            "channel[person_limit]": "required",
+          },
+          messages: {
+            "channel[name]": "请填写房间名称",
+            "channel[person_limit]": "请填写房间允许最大人数"
+          }
+        });
+        $("#channel-person-limit").chosen({
+          placeholder_text_single: "请选择房间允许最大人数",
+          no_results_text:'木有结果啦!',
+          search_contains: true,
+          disable_search_threshold: 20,
+          single_backstroke_delete: false
+        });
+      });
+    </script>
+<% end %>

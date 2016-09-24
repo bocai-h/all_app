@@ -67,3 +67,63 @@ body {
 }
 //显示边框 用来调试div用
 .divcss5{width:100px;height:50px;border:1px solid #F00}
+
+.panel-heading div{
+  display: inline;
+}
+.setting-icon{
+  margin-left: 20px;
+}
+.operation-list a{
+  color: black;
+}
+.modal_page_bg{
+  height: 900px;
+  font-weight: 700;
+}
+//修复chosen字体靠右
+.chosen-container{
+  text-align: left;
+}
+.talks_bg{
+  background-color: #666666;
+  height: 1200px;
+  overflow-y: auto;
+}
+.message_text{
+  width: 600px;
+  height: 100px;
+  border-radius: 8px;
+  -moz-border-radius:8px;
+
+}
+.message-content{
+  margin-left: 50px;
+}
+.message_heading{
+  background-color: #fbfbfb;
+}
+.post-btn{
+  width: 200px;
+  background-color: #fcfccc;
+  color: #777;
+  border-radius:12px;
+  -moz-border-radius:12px;
+}
+.channel-name-left{
+  position: relative;
+  left: -10px;
+  top: -80px;
+  font-size: 18px;
+}
+.message_list{
+  font-size: 18px;
+  color: whitesmoke;
+}
+.message{
+  margin: 5px;
+  padding: 10px;
+  border: 1px solid #222;
+  border-radius: 8px;
+  -moz-border-radius:8px;
+}

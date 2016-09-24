@@ -1,5 +1,5 @@
 class CommonController < ApplicationController
-  # layout "application", :except => [:login,:sign_up]
+  layout "login"
   def index
     # render :layout => false
   end

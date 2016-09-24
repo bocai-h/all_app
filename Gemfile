@@ -1,3 +1,4 @@
+
 # source 'https://ruby.taobao.org'
 source "https://gems.ruby-china.org"
 # source "http://rubygems.org"
@@ -20,7 +21,7 @@ gem 'therubyracer',  platforms: :ruby
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
+# gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
@@ -48,6 +49,10 @@ gem 'bcrypt-ruby', '~> 3.1', '>= 3.1.5'
 
 gem 'paperclip', '~> 5.0'
 
+gem 'puma'
+
+gem 'redis', '~> 3.3', '>= 3.3.1'
+
 group :development do
   gem 'pry'
   # 美化console输出的包
@@ -55,6 +60,7 @@ group :development do
   gem 'hirb-unicode', '~> 0.0.5'
   # 配合chrome插件 rails_panel
   gem 'meta_request'
+  gem 'rack-mini-profiler', '~> 0.10.1'
 end
 
 group :develop,:test do

@@ -30,7 +30,7 @@ module AllApp
     config.assets.compress = true
     #在config/application.rb 文件中加入以下代码可以禁止生成控制器相关的静态资源：
     config.generators do |g|
-      g.assets false
+      g.test_framework nil
     end
 
     # config.autoload_paths += %W( #{config.root}/lib/fwk)
@@ -40,5 +40,9 @@ module AllApp
     # include Fwk::CustomId
     #强制使用ssl(https)
     # config.force_ssl = true
+
+    # 关闭action_cable的跨域检查
+    config.action_cable.disable_request_forgery_protection = true
+    # config.action_cable.allowed_request_origins = ['http://rubyonrails.com', /http:\/\/ruby.*/]
   end
 end

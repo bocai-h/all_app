@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= full_title yield(:page_title) %></title>
+  <%#= action_cable_meta_tag %>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+  <%= render 'layouts/html5_shim' %>
+  <!--非全局js引用-->
+  <%= yield(:template_js) %>
+</head>
+<body>
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="col-md-12">
+      <%= yield %>
+    </div>
+  </div>
+  <%#= debug(params) if Rails.env.development? %>
+</div>
+</body>
+</html>
