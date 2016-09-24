@@ -60,6 +60,7 @@ group :development do
   gem 'hirb-unicode', '~> 0.0.5'
   # 配合chrome插件 rails_panel
   gem 'meta_request'
+  gem 'rack-mini-profiler', '~> 0.10.1'
 end
 
 group :develop,:test do

@@ -3,11 +3,9 @@ class RoomChannel < ApplicationCable::Channel
   def subscribed
     # 订阅对应房间
     # puts "========================subscribed---#{params[:room]}--===================="
-    # if params[:room].present?
-    #   # stream_from "room_channel_#{params[:room]}"
-    #   stream_from "room_channel"
-    # end
-    stream_from "room_channel"
+    stop_all_streams
+    logger.info "current connection: #{ActionCable.server.connections.count}"
+    stream_from "room_channel_#{params[:room]}"
   end
 
   def unsubscribed
@@ -23,7 +21,7 @@ class RoomChannel < ApplicationCable::Channel
     channel = Channel.find(data['room'].to_i)
     message = channel.messages.build(content: data['message'],author: data['user_name'])
     message.created_at = Time.now
-    ActionCable.server.broadcast  "room_channel", message: render_message(message)
+    ActionCable.server.broadcast  "room_channel_#{channel.id}", message: render_message(message)
   end
 
   private
