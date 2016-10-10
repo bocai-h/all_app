@@ -21,7 +21,19 @@ Rails.application.configure do
 
   # Disable Rails's static asset server (Apache or nginx will already do this).
   config.public_file_server.enabled = true
-
+  # config.action_dispatch.access_control_headers = {
+  #     "Access-Control-Allow-Origin"      => 'http://rubyonrails.org',
+  #     "Access-Control-Expose-Headers"    => 'X-Other-Custom-Header',
+  #     "Access-Control-Allow-Headers"     => 'X-Another-Custom-Header',
+  #     "Access-Control-Max-Age"           => '42',
+  #     "Access-Control-Allow-Credentials" => 'true',
+  #     "Access-Control-Allow-Methods"     => 'GET'
+  # }
+  # # 自定义请求静态资源时的http头(但在puma服务器中却没起作用,别的不知道)
+  # config.public_file_server.headers = {
+  #     'Cache-Control' => 'public, s-maxage=31536000, maxage=15552000',
+  #     'Expires' => "#{1.year.from_now.to_formatted_s(:rfc822)}"
+  # }
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = :uglifier
   # config.assets.css_compressor = :sass

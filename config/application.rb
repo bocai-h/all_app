@@ -24,6 +24,7 @@ module AllApp
     config.active_record.schema_format
     # 设置Rails，让其在生产环境中服务于静态资源
     config.public_file_server.enabled = true
+
     #设置自己的静态资源路径
     # config.assets.paths << File.join(Rails.root, 'app', 'assets', 'images','logo')
     config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
