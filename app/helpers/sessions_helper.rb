@@ -2,8 +2,8 @@ module SessionsHelper
   def sign_in(user)
     # 新生成一个记忆权标
     remember_token = User.new_remember_token
-    # cookie存储remember_token
-    cookies.permanent[:remember_token] = remember_token
+    # cookie存储remember_token 使得客户端的代码就无法访问到这些受到保护的 cookie
+    cookies.permanent[:remember_token] = {value: remember_token,httponly: true}
     # 更新用户的记忆权标
     user.update_attribute("remember_token",User.encrypt(remember_token))
     # 设置当前用户
