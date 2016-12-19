@@ -1,0 +1,169 @@
+I, [2016-10-12T23:30:11.547737 #7969]  INFO -- : Refreshing Gem list
+I, [2016-10-12T23:30:12.895760 #7969]  INFO -- : listening on addr=/home/bocai/my_project/all_app/shared/sockets/unicorn.sock fd=9
+I, [2016-10-12T23:30:12.895872 #7969]  INFO -- : worker=0 spawning...
+I, [2016-10-12T23:30:12.896836 #7969]  INFO -- : worker=1 spawning...
+I, [2016-10-12T23:30:12.897256 #7972]  INFO -- : worker=0 spawned pid=7972
+I, [2016-10-12T23:30:12.897359 #7972]  INFO -- : worker=0 ready
+I, [2016-10-12T23:30:12.898414 #7969]  INFO -- : master process ready
+I, [2016-10-12T23:30:12.898812 #7975]  INFO -- : worker=1 spawned pid=7975
+I, [2016-10-12T23:30:12.898911 #7975]  INFO -- : worker=1 ready
+I, [2016-10-13T00:49:02.735609 #10184]  INFO -- : Refreshing Gem list
+I, [2016-10-13T00:49:04.121850 #10184]  INFO -- : unlinking existing socket=/home/bocai/my_project/all_app/shared/sockets/unicorn.sock
+I, [2016-10-13T00:49:04.122039 #10184]  INFO -- : listening on addr=/home/bocai/my_project/all_app/shared/sockets/unicorn.sock fd=9
+I, [2016-10-13T00:49:04.122125 #10184]  INFO -- : worker=0 spawning...
+I, [2016-10-13T00:49:04.123552 #10184]  INFO -- : worker=1 spawning...
+I, [2016-10-13T00:49:04.123973 #10187]  INFO -- : worker=0 spawned pid=10187
+I, [2016-10-13T00:49:04.124090 #10187]  INFO -- : worker=0 ready
+I, [2016-10-13T00:49:04.125705 #10184]  INFO -- : master process ready
+I, [2016-10-13T00:49:04.126091 #10190]  INFO -- : worker=1 spawned pid=10190
+I, [2016-10-13T00:49:04.126207 #10190]  INFO -- : worker=1 ready
+I, [2016-10-13T01:00:02.997326 #10184]  INFO -- : reaped #<Process::Status: pid 10187 exit 0> worker=0
+I, [2016-10-13T01:00:02.997427 #10184]  INFO -- : reaped #<Process::Status: pid 10190 exit 0> worker=1
+I, [2016-10-13T01:00:02.997493 #10184]  INFO -- : reloading config_file=config/unicorn.rb
+I, [2016-10-13T01:00:03.026340 #10184]  INFO -- : Refreshing Gem list
+I, [2016-10-13T01:00:03.028793 #10184]  INFO -- : done reloading config_file=config/unicorn.rb
+I, [2016-10-13T01:00:03.028904 #10184]  INFO -- : master complete
+I, [2016-10-15T01:00:00.498961 #9068]  INFO -- : Refreshing Gem list
+I, [2016-10-15T01:00:01.776608 #9068]  INFO -- : unlinking existing socket=/home/bocai/my_project/all_app/shared/sockets/unicorn.sock
+I, [2016-10-15T01:00:01.776765 #9068]  INFO -- : listening on addr=/home/bocai/my_project/all_app/shared/sockets/unicorn.sock fd=8
+I, [2016-10-15T01:00:01.776852 #9068]  INFO -- : worker=0 spawning...
+I, [2016-10-15T01:00:01.778385 #9068]  INFO -- : worker=1 spawning...
+I, [2016-10-15T01:00:01.778758 #9071]  INFO -- : worker=0 spawned pid=9071
+I, [2016-10-15T01:00:01.778843 #9071]  INFO -- : worker=0 ready
+I, [2016-10-15T01:00:01.780504 #9068]  INFO -- : master process ready
+I, [2016-10-15T01:00:01.780795 #9074]  INFO -- : worker=1 spawned pid=9074
+I, [2016-10-15T01:00:01.780898 #9074]  INFO -- : worker=1 ready
+I, [2016-10-15T01:06:10.725745 #9068]  INFO -- : reaped #<Process::Status: pid 9071 exit 0> worker=0
+I, [2016-10-15T01:06:10.725846 #9068]  INFO -- : reaped #<Process::Status: pid 9074 exit 0> worker=1
+I, [2016-10-15T01:06:10.725932 #9068]  INFO -- : master complete
+I, [2016-10-15T01:06:40.286036 #9479]  INFO -- : Refreshing Gem list
+I, [2016-10-15T01:06:41.556490 #9479]  INFO -- : unlinking existing socket=/home/bocai/my_project/all_app/shared/sockets/unicorn.sock
+I, [2016-10-15T01:06:41.556636 #9479]  INFO -- : listening on addr=/home/bocai/my_project/all_app/shared/sockets/unicorn.sock fd=9
+I, [2016-10-15T01:06:41.556711 #9479]  INFO -- : worker=0 spawning...
+I, [2016-10-15T01:06:41.558166 #9479]  INFO -- : worker=1 spawning...
+I, [2016-10-15T01:06:41.558549 #9483]  INFO -- : worker=0 spawned pid=9483
+I, [2016-10-15T01:06:41.558660 #9483]  INFO -- : worker=0 ready
+I, [2016-10-15T01:06:41.560097 #9479]  INFO -- : master process ready
+I, [2016-10-15T01:06:41.560511 #9486]  INFO -- : worker=1 spawned pid=9486
+I, [2016-10-15T01:06:41.560625 #9486]  INFO -- : worker=1 ready
+I, [2016-10-15T01:07:12.420726 #9479]  INFO -- : reaped #<Process::Status: pid 9483 exit 0> worker=0
+I, [2016-10-15T01:07:12.420834 #9479]  INFO -- : reaped #<Process::Status: pid 9486 exit 0> worker=1
+I, [2016-10-15T01:07:12.420902 #9479]  INFO -- : master complete
+I, [2016-10-15T01:07:28.156938 #9495]  INFO -- : Refreshing Gem list
+I, [2016-10-15T01:07:29.432599 #9495]  INFO -- : unlinking existing socket=/home/bocai/my_project/all_app/shared/sockets/unicorn.sock
+I, [2016-10-15T01:07:29.432765 #9495]  INFO -- : listening on addr=/home/bocai/my_project/all_app/shared/sockets/unicorn.sock fd=9
+I, [2016-10-15T01:07:29.432844 #9495]  INFO -- : worker=0 spawning...
+I, [2016-10-15T01:07:29.434250 #9495]  INFO -- : worker=1 spawning...
+I, [2016-10-15T01:07:29.434607 #9499]  INFO -- : worker=0 spawned pid=9499
+I, [2016-10-15T01:07:29.434717 #9499]  INFO -- : worker=0 ready
+I, [2016-10-15T01:07:29.436285 #9495]  INFO -- : master process ready
+I, [2016-10-15T01:07:29.436692 #9502]  INFO -- : worker=1 spawned pid=9502
+I, [2016-10-15T01:07:29.436814 #9502]  INFO -- : worker=1 ready
+I, [2016-10-15T01:08:07.194495 #9495]  INFO -- : reaped #<Process::Status: pid 9499 exit 0> worker=0
+I, [2016-10-15T01:08:07.194676 #9495]  INFO -- : reaped #<Process::Status: pid 9502 exit 0> worker=1
+I, [2016-10-15T01:08:07.194796 #9495]  INFO -- : master complete
+I, [2016-10-15T01:08:36.122000 #9516]  INFO -- : Refreshing Gem list
+I, [2016-10-15T01:08:37.550697 #9516]  INFO -- : unlinking existing socket=/home/bocai/my_project/all_app/shared/sockets/unicorn.sock
+I, [2016-10-15T01:08:37.550862 #9516]  INFO -- : listening on addr=/home/bocai/my_project/all_app/shared/sockets/unicorn.sock fd=9
+I, [2016-10-15T01:08:37.550948 #9516]  INFO -- : worker=0 spawning...
+I, [2016-10-15T01:08:37.552380 #9516]  INFO -- : worker=1 spawning...
+I, [2016-10-15T01:08:37.552793 #9519]  INFO -- : worker=0 spawned pid=9519
+I, [2016-10-15T01:08:37.552905 #9519]  INFO -- : worker=0 ready
+I, [2016-10-15T01:08:37.554463 #9516]  INFO -- : master process ready
+I, [2016-10-15T01:08:37.554845 #9522]  INFO -- : worker=1 spawned pid=9522
+I, [2016-10-15T01:08:37.554947 #9522]  INFO -- : worker=1 ready
+I, [2016-10-18T22:11:41.369801 #15844]  INFO -- : Refreshing Gem list
+I, [2016-10-18T22:11:42.835860 #15844]  INFO -- : unlinking existing socket=/home/bocai/my_project/all_app/shared/sockets/unicorn.sock
+I, [2016-10-18T22:11:42.835978 #15844]  INFO -- : listening on addr=/home/bocai/my_project/all_app/shared/sockets/unicorn.sock fd=8
+I, [2016-10-18T22:11:42.836045 #15844]  INFO -- : worker=0 spawning...
+I, [2016-10-18T22:11:42.837570 #15844]  INFO -- : worker=1 spawning...
+I, [2016-10-18T22:11:42.837935 #15847]  INFO -- : worker=0 spawned pid=15847
+I, [2016-10-18T22:11:42.838027 #15847]  INFO -- : worker=0 ready
+I, [2016-10-18T22:11:42.839893 #15844]  INFO -- : master process ready
+I, [2016-10-18T22:11:42.840331 #15850]  INFO -- : worker=1 spawned pid=15850
+I, [2016-10-18T22:11:42.840430 #15850]  INFO -- : worker=1 ready
+I, [2016-10-18T22:32:01.009226 #16694]  INFO -- : Refreshing Gem list
+I, [2016-10-18T22:32:02.375802 #16694]  INFO -- : unlinking existing socket=/home/bocai/my_project/all_app/shared/sockets/unicorn.sock
+I, [2016-10-18T22:32:02.375958 #16694]  INFO -- : listening on addr=/home/bocai/my_project/all_app/shared/sockets/unicorn.sock fd=8
+I, [2016-10-18T22:32:02.376035 #16694]  INFO -- : worker=0 spawning...
+I, [2016-10-18T22:32:02.377240 #16694]  INFO -- : worker=1 spawning...
+I, [2016-10-18T22:32:02.377610 #16697]  INFO -- : worker=0 spawned pid=16697
+I, [2016-10-18T22:32:02.377698 #16697]  INFO -- : worker=0 ready
+I, [2016-10-18T22:32:02.379027 #16694]  INFO -- : master process ready
+I, [2016-10-18T22:32:02.379402 #16700]  INFO -- : worker=1 spawned pid=16700
+I, [2016-10-18T22:32:02.379487 #16700]  INFO -- : worker=1 ready
+I, [2016-10-18T22:34:56.800654 #16829]  INFO -- : Refreshing Gem list
+I, [2016-10-18T22:34:58.146801 #16829]  INFO -- : unlinking existing socket=/home/bocai/my_project/all_app/shared/sockets/unicorn.sock
+I, [2016-10-18T22:34:58.146966 #16829]  INFO -- : listening on addr=/home/bocai/my_project/all_app/shared/sockets/unicorn.sock fd=8
+I, [2016-10-18T22:34:58.147046 #16829]  INFO -- : worker=0 spawning...
+I, [2016-10-18T22:34:58.148330 #16829]  INFO -- : worker=1 spawning...
+I, [2016-10-18T22:34:58.148703 #16832]  INFO -- : worker=0 spawned pid=16832
+I, [2016-10-18T22:34:58.148801 #16832]  INFO -- : worker=0 ready
+I, [2016-10-18T22:34:58.150137 #16829]  INFO -- : master process ready
+I, [2016-10-18T22:34:58.150517 #16835]  INFO -- : worker=1 spawned pid=16835
+I, [2016-10-18T22:34:58.150605 #16835]  INFO -- : worker=1 ready
+I, [2016-10-18T23:18:28.173892 #17545]  INFO -- : Refreshing Gem list
+I, [2016-10-18T23:18:29.538152 #17545]  INFO -- : unlinking existing socket=/home/bocai/my_project/all_app/shared/sockets/unicorn.sock
+I, [2016-10-18T23:18:29.538291 #17545]  INFO -- : listening on addr=/home/bocai/my_project/all_app/shared/sockets/unicorn.sock fd=8
+I, [2016-10-18T23:18:29.538361 #17545]  INFO -- : worker=0 spawning...
+I, [2016-10-18T23:18:29.539889 #17545]  INFO -- : worker=1 spawning...
+I, [2016-10-18T23:18:29.540273 #17548]  INFO -- : worker=0 spawned pid=17548
+I, [2016-10-18T23:18:29.540364 #17548]  INFO -- : worker=0 ready
+I, [2016-10-18T23:18:29.541909 #17545]  INFO -- : master process ready
+I, [2016-10-18T23:18:29.542299 #17551]  INFO -- : worker=1 spawned pid=17551
+I, [2016-10-18T23:18:29.542388 #17551]  INFO -- : worker=1 ready
+I, [2016-10-18T23:24:21.024599 #17871]  INFO -- : Refreshing Gem list
+I, [2016-10-18T23:24:22.542941 #17871]  INFO -- : unlinking existing socket=/home/bocai/my_project/all_app/shared/sockets/unicorn.sock
+I, [2016-10-18T23:24:22.543118 #17871]  INFO -- : listening on addr=/home/bocai/my_project/all_app/shared/sockets/unicorn.sock fd=8
+I, [2016-10-18T23:24:22.543210 #17871]  INFO -- : worker=0 spawning...
+I, [2016-10-18T23:24:22.544837 #17871]  INFO -- : worker=1 spawning...
+I, [2016-10-18T23:24:22.545303 #17873]  INFO -- : worker=0 spawned pid=17873
+I, [2016-10-18T23:24:22.545420 #17873]  INFO -- : worker=0 ready
+I, [2016-10-18T23:24:22.546130 #17871]  INFO -- : master process ready
+I, [2016-10-18T23:24:22.546511 #17876]  INFO -- : worker=1 spawned pid=17876
+I, [2016-10-18T23:24:22.546609 #17876]  INFO -- : worker=1 ready
+I, [2016-10-18T23:25:56.160292 #17871]  INFO -- : reaped #<Process::Status: pid 17873 exit 0> worker=0
+I, [2016-10-18T23:25:56.160383 #17871]  INFO -- : reaped #<Process::Status: pid 17876 exit 0> worker=1
+I, [2016-10-18T23:25:56.160438 #17871]  INFO -- : master complete
+I, [2016-10-18T23:41:53.722519 #19073]  INFO -- : Refreshing Gem list
+I, [2016-10-18T23:41:55.073485 #19073]  INFO -- : unlinking existing socket=/home/bocai/my_project/all_app/shared/sockets/unicorn.sock
+I, [2016-10-18T23:41:55.073643 #19073]  INFO -- : listening on addr=/home/bocai/my_project/all_app/shared/sockets/unicorn.sock fd=8
+I, [2016-10-18T23:41:55.073709 #19073]  INFO -- : worker=0 spawning...
+I, [2016-10-18T23:41:55.075347 #19073]  INFO -- : worker=1 spawning...
+I, [2016-10-18T23:41:55.075737 #19075]  INFO -- : worker=0 spawned pid=19075
+I, [2016-10-18T23:41:55.075846 #19075]  INFO -- : worker=0 ready
+I, [2016-10-18T23:41:55.077333 #19073]  INFO -- : master process ready
+I, [2016-10-18T23:41:55.077695 #19078]  INFO -- : worker=1 spawned pid=19078
+I, [2016-10-18T23:41:55.077775 #19078]  INFO -- : worker=1 ready
+I, [2016-10-18T23:43:30.061000 #19073]  INFO -- : reaped #<Process::Status: pid 19075 exit 0> worker=0
+I, [2016-10-18T23:43:30.061084 #19073]  INFO -- : reaped #<Process::Status: pid 19078 exit 0> worker=1
+I, [2016-10-18T23:43:30.061176 #19073]  INFO -- : master complete
+I, [2016-10-18T23:43:37.478292 #19221]  INFO -- : Refreshing Gem list
+I, [2016-10-18T23:43:38.851270 #19221]  INFO -- : listening on addr=0.0.0.0:8080 fd=8
+I, [2016-10-18T23:43:38.851377 #19221]  INFO -- : worker=0 spawning...
+I, [2016-10-18T23:43:38.853266 #19221]  INFO -- : worker=1 spawning...
+I, [2016-10-18T23:43:38.853660 #19223]  INFO -- : worker=0 spawned pid=19223
+I, [2016-10-18T23:43:38.853769 #19223]  INFO -- : worker=0 ready
+I, [2016-10-18T23:43:38.855456 #19221]  INFO -- : master process ready
+I, [2016-10-18T23:43:38.855822 #19226]  INFO -- : worker=1 spawned pid=19226
+I, [2016-10-18T23:43:38.855917 #19226]  INFO -- : worker=1 ready
+I, [2016-10-18T23:43:48.417647 #19221]  INFO -- : reaped #<Process::Status: pid 19223 exit 0> worker=0
+I, [2016-10-18T23:43:48.417832 #19221]  INFO -- : reaped #<Process::Status: pid 19226 exit 0> worker=1
+I, [2016-10-18T23:43:48.417955 #19221]  INFO -- : master complete
+I, [2016-10-18T23:44:00.313207 #19240]  INFO -- : Refreshing Gem list
+I, [2016-10-18T23:44:01.591441 #19240]  INFO -- : listening on addr=0.0.0.0:8080 fd=8
+I, [2016-10-18T23:44:01.591551 #19240]  INFO -- : worker=0 spawning...
+I, [2016-10-18T23:44:01.593077 #19240]  INFO -- : worker=1 spawning...
+I, [2016-10-18T23:44:01.593436 #19243]  INFO -- : worker=0 spawned pid=19243
+I, [2016-10-18T23:44:01.593541 #19243]  INFO -- : worker=0 ready
+I, [2016-10-18T23:44:01.595089 #19240]  INFO -- : master process ready
+I, [2016-10-18T23:44:01.595423 #19246]  INFO -- : worker=1 spawned pid=19246
+I, [2016-10-18T23:44:01.595514 #19246]  INFO -- : worker=1 ready
+127.0.0.1 - - [18/Oct/2016:23:44:10 +0800] "GET /go_chat_room HTTP/1.1" 200 9623 5.3140
+127.0.0.1 - - [18/Oct/2016:23:44:10 +0800] "GET / HTTP/1.1" 200 9748 0.6977
+127.0.0.1 - - [18/Oct/2016:23:44:20 +0800] "GET / HTTP/1.1" 200 9769 1.1892
+127.0.0.1 - - [18/Oct/2016:23:44:22 +0800] "GET / HTTP/1.1" 200 9790 11.3338
+127.0.0.1 - - [18/Oct/2016:23:44:23 +0800] "GET / HTTP/1.1" 200 9811 1.7593
+I, [2016-10-18T23:44:47.454919 #19240]  INFO -- : reaped #<Process::Status: pid 19243 exit 0> worker=0
+I, [2016-10-18T23:44:47.455009 #19240]  INFO -- : reaped #<Process::Status: pid 19246 exit 0> worker=1
+I, [2016-10-18T23:44:47.455074 #19240]  INFO -- : master complete

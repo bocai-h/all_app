@@ -53,6 +53,8 @@ gem 'puma'
 
 gem 'redis', '~> 3.3', '>= 3.3.1'
 
+gem 'unicorn', '~> 5.1'
+
 group :development do
   gem 'pry'
   # 美化console输出的包
