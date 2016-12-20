@@ -18,6 +18,9 @@ gem 'coffee-rails', '~> 4.2', '>= 4.2.1'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 gem 'therubyracer',  platforms: :ruby
 
+# 将session持久化到数据库中
+gem 'activerecord-session_store', '~> 1.0'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks

@@ -10,9 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160731095959) do
+ActiveRecord::Schema.define(version: 20161220103132) do
 
-  create_table "channels", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin" do |t|
+  create_table "channels", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
     t.string   "description"
     t.integer  "person_limit"
@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 20160731095959) do
     t.datetime "updated_at",   null: false
   end
 
-  create_table "messages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin" do |t|
+  create_table "messages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "channel_id"
     t.text     "content",    limit: 65535, null: false
     t.string   "author",                   null: false
@@ -29,7 +29,16 @@ ActiveRecord::Schema.define(version: 20160731095959) do
     t.index ["channel_id"], name: "index_messages_on_channel_id", using: :btree
   end
 
-  create_table "user_generals", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin" do |t|
+  create_table "sessions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "session_id",               null: false
+    t.text     "data",       limit: 65535
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["session_id"], name: "index_sessions_on_session_id", unique: true, using: :btree
+    t.index ["updated_at"], name: "index_sessions_on_updated_at", using: :btree
+  end
+
+  create_table "user_generals", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id"
     t.string   "name",         limit: 50,  null: false
     t.integer  "age",                      null: false
@@ -42,7 +51,7 @@ ActiveRecord::Schema.define(version: 20160731095959) do
     t.index ["user_id"], name: "index_user_generals_on_user_id", using: :btree
   end
 
-  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin" do |t|
+  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "nick_name",       limit: 50,  null: false
     t.string   "email",           limit: 30,  null: false
     t.string   "password_digest", limit: 200
