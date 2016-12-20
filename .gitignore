@@ -23,3 +23,6 @@ doc/
 .Ds_Store
 .idea
 public/assets/
+
+database.yml
+cable.yml
