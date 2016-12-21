@@ -41,7 +41,7 @@ case $1 in
   start)
     sig 0 && echo >&2 "Already running" && exit 0
     echo "Starting $APP_NAME"
-    su $USER -c "$CMD"
+    su - $USER -c "$CMD"
     ;;
   stop)
     echo "Stopping $APP_NAME"
@@ -54,9 +54,9 @@ case $1 in
     echo >&2 "Not running"
     ;;
   restart|reload|upgrade)
-    sig USR2 && echo "reloaded $APP_NAME" && exit 0
+    sig TERM && echo "reloaded $APP_NAME"
     echo >&2 "Couldn't reload, starting '$CMD' instead"
-    $CMD
+    su - $USER -c "$CMD"
     ;;
   rotate)
     sig USR1 && echo rotated logs OK && exit 0
@@ -67,3 +67,4 @@ case $1 in
     exit 1
     ;;
 esac
+
