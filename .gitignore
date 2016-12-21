@@ -26,3 +26,4 @@ public/assets/
 
 database.yml
 cable.yml
+/shared/log/*
