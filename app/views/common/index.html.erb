@@ -9,8 +9,12 @@
   <% @medium.each do |media| %>
     <tr>
       <td><%= media.name %></td>
-      <td>
-        <a href="javascript:void(0)" class="change" id="<%= media.id %>">转换</a>
+      <td class="operate">
+        <% if media.status == "NO" %>
+            <a href="javascript:void(0)" class="change" id="<%= media.id %>">转换</a>
+        <% else %>
+            转换
+        <% end %>
       </td>
       <td><%= process_url(media.target) %></td>
       <td class="status">
@@ -31,6 +35,7 @@
              success: function(data){
                if(data["status"] == "ok"){
                  $("#" + media_id).parent().siblings(".status").html("<span class='label label-primary'>排队中</span>");
+                 $("#" + media_id).parent().html("转换");
                }
              },
              dataType: "json"
