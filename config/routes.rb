@@ -24,5 +24,7 @@ Rails.application.routes.draw do
   # 把websocket服务以engine的方式挂载起来
   mount ActionCable.server => '/cable'
 
-  match "*path",to: "pages#error_404",via: :all
+  post '/media/update',to: 'media#update'
+
+  # match "*path",to: "pages#error_404",via: :all
 end

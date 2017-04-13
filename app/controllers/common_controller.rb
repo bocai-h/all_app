@@ -2,6 +2,7 @@ class CommonController < ApplicationController
   layout "login"
   def index
     # render :layout => false
+    @medium = Medium.all
   end
 
   def login
