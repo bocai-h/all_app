@@ -1,14 +1,20 @@
 module MediaHelper
   def status_meaning status_code
+    status = ""
     case status_code
       when "NO"
-        "初始"
+        status = "<span class='label label-default'>初始</span>"
       when "CHANGE"
-        "排队中"
+        status = "<span class='label label-primary'>排队中</span>"
       when "RUNNING"
-        "正在转换"
+        status = "<span class='label label-info'>运行中</span>"
       when "COMPLETE"
-        "完成"
+        status = "<span class='label label-success'>完成</span>"
     end
+    status.html_safe
+  end
+
+  def process_url absolute_url
+    request.host + ":" + request.port.to_s + absolute_url.gsub("#{Rails.root.to_s}","")
   end
 end

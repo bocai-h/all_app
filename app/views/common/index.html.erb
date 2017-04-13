@@ -12,8 +12,10 @@
       <td>
         <a href="javascript:void(0)" class="change" id="<%= media.id %>">转换</a>
       </td>
-      <td><%= media.target %></td>
-      <td class="status"><%= status_meaning(media.status) %></td>
+      <td><%= process_url(media.target) %></td>
+      <td class="status">
+        <%= status_meaning(media.status) %>
+      </td>
     </tr>
   <% end %>
 </table>
@@ -28,7 +30,7 @@
              data: {media_id: media_id},
              success: function(data){
                if(data["status"] == "ok"){
-                 $("#" + media_id).parent().siblings(".status").html("排队中");
+                 $("#" + media_id).parent().siblings(".status").html("<span class='label label-primary'>排队中</span>");
                }
              },
              dataType: "json"
