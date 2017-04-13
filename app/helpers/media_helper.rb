@@ -15,6 +15,6 @@ module MediaHelper
   end
 
   def process_url absolute_url
-    request.host + ":" + request.port.to_s + absolute_url.gsub("#{Rails.root.to_s}","")
+    request.host + ":" + request.port.to_s + absolute_url.gsub("#{Rails.root.to_s}/public","")
   end
 end
